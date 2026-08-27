@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy — Market, customers and institutional buying logic for Territorial Energy Intelligence & Orchestration.">
+
+  <title>03 — Market & Customers | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .market-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .market-hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -260px;
+      top: -230px;
+      background:
+        radial-gradient(circle,
+          rgba(196,157,70,.18) 0%,
+          rgba(196,157,70,.04) 45%,
+          transparent 72%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .market-kpis {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .market-kpi {
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .market-kpi strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--forest);
+      letter-spacing: -.04em;
+      margin-bottom: 8px;
+    }
+
+    .market-kpi span {
+      color: var(--grey);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .institutional-stack {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 12px;
+    }
+
+    .institution {
+      border-radius: 18px;
+      padding: 20px;
+      min-height: 150px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .institution-count {
+      display: block;
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--forest);
+      letter-spacing: -.04em;
+      margin-bottom: 7px;
+    }
+
+    .institution strong {
+      color: var(--teal);
+    }
+
+    .fact-badge,
+    .assumption-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 5px 8px;
+      margin-bottom: 11px;
+    }
+
+    .fact-badge {
+      background: var(--mint);
+      color: var(--forest);
+    }
+
+    .assumption-badge {
+      background: rgba(196,157,70,.15);
+      color: #7c6223;
+    }
+
+    .driver-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 15px;
+    }
+
+    .driver {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 15px;
+      padding: 21px;
+      background: rgba(255,255,255,.84);
+      border-radius: 19px;
+      border: 1px solid var(--border);
+    }
+
+    .driver-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--mint);
+      color: var(--forest);
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .driver h3 {
+      margin-bottom: 6px;
+    }
+
+    .icp-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 17px;
+    }
+
+    .icp-card {
+      position: relative;
+      min-height: 330px;
+      background: white;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .icp-card.primary {
+      border-top: 5px solid var(--forest);
+    }
+
+    .icp-card.secondary {
+      border-top: 5px solid var(--gold);
+    }
+
+    .icp-card.explore {
+      border-top: 5px solid var(--teal);
+    }
+
+    .icp-card::after {
+      content: attr(data-tier);
+      position: absolute;
+      right: 16px;
+      top: 13px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      color: rgba(13,59,59,.32);
+    }
+
+    .icp-list {
+      padding-left: 18px;
+      color: #4b5e57;
+      margin-bottom: 0;
+    }
+
+    .role-map {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 12px;
+    }
+
+    .role-card {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+    }
+
+    .role-card strong {
+      display: block;
+      color: var(--teal);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .role-label {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 7px;
+    }
+
+    .buying-journey {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .buy-step {
+      min-height: 128px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+      border-radius: 15px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .buy-step-num {
+      font-size: 11px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .buy-step strong {
+      color: var(--teal);
+      line-height: 1.25;
+    }
+
+    .trigger-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 13px;
+    }
+
+    .trigger {
+      padding: 19px;
+      background: rgba(255,255,255,.84);
+      border-radius: 16px;
+      border-left: 4px solid var(--forest);
+    }
+
+    .trigger strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 5px;
+    }
+
+    .funnel {
+      display: grid;
+      gap: 13px;
+      width: min(820px,100%);
+      margin: 28px auto 0;
+    }
+
+    .funnel-row {
+      margin: 0 auto;
+      border-radius: 15px;
+      padding: 16px 22px;
+      text-align: center;
+      color: white;
+      font-weight: 900;
+    }
+
+    .funnel-tam {
+      width: 100%;
+      background: var(--teal);
+    }
+
+    .funnel-sam {
+      width: 76%;
+      background: var(--forest);
+    }
+
+    .funnel-qualified {
+      width: 54%;
+      background: #2f8f4f;
+    }
+
+    .funnel-som {
+      width: 32%;
+      background: var(--gold);
+      color: var(--teal);
+    }
+
+    .funnel-row small {
+      display: block;
+      opacity: .78;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    .market-model-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .scenario {
+      background: white;
+      border-radius: 22px;
+      padding: 25px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .scenario.base {
+      border: 2px solid var(--forest);
+      box-shadow: var(--shadow);
+    }
+
+    .scenario strong {
+      display: block;
+      font-size: 38px;
+      color: var(--forest);
+      letter-spacing: -.05em;
+    }
+
+    .scenario h3 {
+      margin: 8px 0 5px;
+    }
+
+    .customer-value {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .value-card {
+      padding: 21px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--border);
+    }
+
+    .value-card strong {
+      color: var(--forest);
+      font-size: 17px;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .fit-score {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fit-score:last-child {
+      border-bottom: 0;
+    }
+
+    .stars {
+      letter-spacing: 2px;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 980px) {
+
+      .market-kpis,
+      .institutional-stack,
+      .role-map,
+      .customer-value {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .icp-grid,
+      .trigger-grid,
+      .market-model-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .buying-journey {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .market-kpis,
+      .institutional-stack,
+      .driver-grid,
+      .role-map,
+      .customer-value,
+      .buying-journey {
+        grid-template-columns: 1fr;
+      }
+
+      .funnel-sam,
+      .funnel-qualified,
+      .funnel-som {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a href="01_problem.html">01 Problem</a>
+      <a href="02_solution.html">02 Solution</a>
+      <a class="active" href="03_market.html">03 Market</a>
+      <a href="04_competition.html">04 Competition</a>
+      <a href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero market-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Market & Customers
+    </div>
+
+    <div class="section-kicker">
+      Chapter 03 / 12
+    </div>
+
+    <h1>
+      A structured institutional market
+      <span style="color:var(--forest)">
+        with a real execution problem.
+      </span>
+    </h1>
+
+    <p class="lead">
+      Wenergy's initial market is not "everyone who uses energy".
+      It starts with territorial public organisations that already carry climate,
+      energy and infrastructure responsibilities — but often lack a shared layer
+      for comparing opportunities and organising action.
+    </p>
+
+    <div class="market-kpis">
+
+      <div class="market-kpi">
+        <strong>1,252</strong>
+        <span>French EPCIs with own taxation</span>
+      </div>
+
+      <div class="market-kpi">
+        <strong>&gt;80%</strong>
+        <span>Population living in an EPCI with PCAET</span>
+      </div>
+
+      <div class="market-kpi">
+        <strong>€800m</strong>
+        <span>2026 Fonds Chaleur budget</span>
+      </div>
+
+      <div class="market-kpi">
+        <strong>42</strong>
+        <span>Communes in Foix-Varilhes pilot context</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Institutional Market
+      </div>
+
+      <h2>
+        France already has a territorial buyer infrastructure.
+      </h2>
+
+      <p>
+        Wenergy's first market thesis starts from existing public organisations,
+        not from inventing a new buyer category.
+      </p>
+    </div>
+
+    <div class="institutional-stack">
+
+      <article class="institution">
+        <span class="fact-badge">External Fact</span>
+        <span class="institution-count">987</span>
+        <strong>Communautés de communes</strong>
+        <p>
+          Large portion of the potential small/rural territorial buyer universe.
+        </p>
+      </article>
+
+      <article class="institution">
+        <span class="fact-badge">External Fact</span>
+        <span class="institution-count">230</span>
+        <strong>Communautés d'agglomération</strong>
+        <p>
+          Larger teams and more complex multi-actor portfolios.
+        </p>
+      </article>
+
+      <article class="institution">
+        <span class="fact-badge">External Fact</span>
+        <span class="institution-count">14</span>
+        <strong>Communautés urbaines</strong>
+        <p>
+          More mature urban institutional environments.
+        </p>
+      </article>
+
+      <article class="institution">
+        <span class="fact-badge">External Fact</span>
+        <span class="institution-count">21</span>
+        <strong>Métropoles</strong>
+        <p>
+          High-capacity organisations with sophisticated existing tooling.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      <strong>Source:</strong>
+      DGCL, French intermunicipal structure at 1 January 2026.
+      See the public
+      <a href="../evidence/SOURCES.md">Source Register</a>.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Why Now
+      </div>
+
+      <h2>
+        The market is being pushed from planning toward implementation.
+      </h2>
+    </div>
+
+    <div class="driver-grid">
+
+      <article class="driver">
+        <div class="driver-icon">01</div>
+
+        <div>
+          <h3>Climate plans already exist</h3>
+          <p>
+            Territorial climate strategy is increasingly institutionalised through
+            structures such as PCAET.
+          </p>
+        </div>
+      </article>
+
+      <article class="driver">
+        <div class="driver-icon">02</div>
+
+        <div>
+          <h3>Public buildings create real demand</h3>
+          <p>
+            Energy renovation, tertiary obligations and heating decarbonisation
+            create practical investment questions.
+          </p>
+        </div>
+      </article>
+
+      <article class="driver">
+        <div class="driver-icon">03</div>
+
+        <div>
+          <h3>Renewable / recoverable heat is funded</h3>
+          <p>
+            Public programmes such as Fonds Chaleur create implementation pathways
+            when viable projects are identified.
+          </p>
+        </div>
+      </article>
+
+      <article class="driver">
+        <div class="driver-icon">04</div>
+
+        <div>
+          <h3>Local capacity remains constrained</h3>
+          <p>
+            Small territories cannot continuously perform deep multi-pathway analysis
+            across every local asset and actor.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="callout callout-light" style="margin-top:22px">
+      THE MARKET DRIVER IS NOT "MORE DATA".
+      IT IS THE NEED TO TURN EXISTING CLIMATE RESPONSIBILITIES INTO IMPLEMENTABLE PROJECTS.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Ideal Customer Profile
+      </div>
+
+      <h2>
+        Start where the execution gap is strongest.
+      </h2>
+
+      <p>
+        The strongest first customer is not necessarily the largest public authority.
+        It is the organisation where climate responsibility, project complexity and
+        limited analytical capacity overlap.
+      </p>
+    </div>
+
+    <div class="icp-grid">
+
+      <article class="icp-card primary" data-tier="PRIMARY">
+
+        <span class="tag">Best Initial Fit</span>
+
+        <h3>
+          Small / Medium EPCI
+        </h3>
+
+        <p>
+          Territorial buyer responsible for multiple communes and climate/energy
+          coordination, but without a large permanent project-intelligence team.
+        </p>
+
+        <ul class="icp-list">
+          <li>Active PCAET / energy agenda</li>
+          <li>Multiple communes</li>
+          <li>Mixed local resources</li>
+          <li>Limited internal engineering</li>
+          <li>Need to prioritise studies</li>
+          <li>Identifiable internal champion</li>
+        </ul>
+
+      </article>
+
+      <article class="icp-card secondary" data-tier="PARALLEL">
+
+        <span class="tag">High-Leverage</span>
+
+        <h3>
+          Energy Syndicate
+        </h3>
+
+        <p>
+          Potential buyer and distribution layer able to coordinate energy
+          intelligence across multiple member territories.
+        </p>
+
+        <ul class="icp-list">
+          <li>Energy expertise</li>
+          <li>Multi-territory reach</li>
+          <li>Existing institutional trust</li>
+          <li>Potential channel leverage</li>
+          <li>Professional handoff capacity</li>
+        </ul>
+
+      </article>
+
+      <article class="icp-card explore" data-tier="EXPANSION">
+
+        <span class="tag">Expansion</span>
+
+        <h3>
+          Agglomeration / Larger Territory
+        </h3>
+
+        <p>
+          More sophisticated buyer where value may come from cross-department
+          orchestration, portfolio memory and complex project relationships.
+        </p>
+
+        <ul class="icp-list">
+          <li>More existing tools</li>
+          <li>Higher coordination complexity</li>
+          <li>Greater integration requirements</li>
+          <li>Potential higher ACV</li>
+          <li>Higher competitive threshold</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Buying System
+      </div>
+
+      <h2>
+        Buyer, champion, user and beneficiary are not the same person.
+      </h2>
+    </div>
+
+    <div class="role-map">
+
+      <article class="role-card">
+        <div class="role-label">Economic Buyer</div>
+        <strong>EPCI / Territorial Organisation</strong>
+        <p>
+          Funds the territorial licence or pilot.
+        </p>
+      </article>
+
+      <article class="role-card">
+        <div class="role-label">Internal Champion</div>
+        <strong>Energy / Climate / Technical Lead</strong>
+        <p>
+          Feels the workflow pain and drives adoption.
+        </p>
+      </article>
+
+      <article class="role-card">
+        <div class="role-label">Operational Users</div>
+        <strong>Territorial Teams + Experts</strong>
+        <p>
+          Explore, validate, prioritise and hand off projects.
+        </p>
+      </article>
+
+      <article class="role-card">
+        <div class="role-label">Beneficiaries</div>
+        <strong>Communes + Businesses + Residents</strong>
+        <p>
+          Gain clearer access to territorial energy intelligence.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Jobs To Be Done
+      </div>
+
+      <h2>
+        What the customer is actually trying to accomplish.
+      </h2>
+    </div>
+
+    <div class="customer-value">
+
+      <article class="value-card">
+        <strong>See the territory</strong>
+        Understand multiple resource and demand layers together.
+      </article>
+
+      <article class="value-card">
+        <strong>Prioritise scarce attention</strong>
+        Decide which opportunities deserve deeper study.
+      </article>
+
+      <article class="value-card">
+        <strong>Explain decisions</strong>
+        Show evidence, uncertainty and next actions.
+      </article>
+
+      <article class="value-card">
+        <strong>Preserve project memory</strong>
+        Avoid rediscovering the same evidence and failed paths repeatedly.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Buying Triggers
+      </div>
+
+      <h2>
+        Wenergy becomes relevant when a territory has to decide what deserves attention.
+      </h2>
+    </div>
+
+    <div class="trigger-grid">
+
+      <article class="trigger">
+        <strong>New PCAET / climate-programme cycle</strong>
+        Need to move from strategic goals into project portfolios.
+      </article>
+
+      <article class="trigger">
+        <strong>New funding opportunity</strong>
+        Need to rapidly identify credible candidate projects.
+      </article>
+
+      <article class="trigger">
+        <strong>Public-building energy challenge</strong>
+        Need to compare local decarbonisation pathways.
+      </article>
+
+      <article class="trigger">
+        <strong>Waste-heat / local resource discovery</strong>
+        Need to find suitable nearby demand and actors.
+      </article>
+
+      <article class="trigger">
+        <strong>Study budget constraint</strong>
+        Need to decide which projects justify professional feasibility.
+      </article>
+
+      <article class="trigger">
+        <strong>Institutional transition</strong>
+        Need to preserve project intelligence when teams or leadership change.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Buying Journey
+      </div>
+
+      <h2>
+        Pilot first. Recurring value second.
+      </h2>
+    </div>
+
+    <div class="buying-journey">
+
+      <div class="buy-step">
+        <span class="buy-step-num">01</span>
+        <strong>Discover pain</strong>
+        <small>Existing workflow and project backlog</small>
+      </div>
+
+      <div class="buy-step">
+        <span class="buy-step-num">02</span>
+        <strong>Qualify territory</strong>
+        <small>Data, pathways, buyer and champion</small>
+      </div>
+
+      <div class="buy-step">
+        <span class="buy-step-num">03</span>
+        <strong>Paid pilot</strong>
+        <small>Bounded prioritisation engagement</small>
+      </div>
+
+      <div class="buy-step">
+        <span class="buy-step-num">04</span>
+        <strong>Measure value</strong>
+        <small>Decision efficiency and usefulness</small>
+      </div>
+
+      <div class="buy-step">
+        <span class="buy-step-num">05</span>
+        <strong>Annual licence</strong>
+        <small>Recurring territorial project intelligence</small>
+      </div>
+
+      <div class="buy-step">
+        <span class="buy-step-num">06</span>
+        <strong>Expand</strong>
+        <small>More pathways, users or territories</small>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Market Sizing
+      </div>
+
+      <h2>
+        A bottom-up institutional model.
+      </h2>
+
+      <p>
+        Wenergy does not inflate market size using total energy investment.
+        Market sizing is based on addressable public organisations multiplied by
+        explicit contract-value assumptions.
+      </p>
+    </div>
+
+    <div class="funnel">
+
+      <div class="funnel-row funnel-tam">
+        TAM — French Institutional Universe
+        <small>1,252 EPCI-based market structure • scenario pricing</small>
+      </div>
+
+      <div class="funnel-row funnel-sam">
+        Structural SAM
+        <small>Communautés de communes + agglomérations</small>
+      </div>
+
+      <div class="funnel-row funnel-qualified">
+        Near-Term Qualified SAM
+        <small>Planning assumption: roughly 20% of structural target</small>
+      </div>
+
+      <div class="funnel-row funnel-som">
+        5-Year SOM
+        <small>35 active customers in Base scenario</small>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        TAM Scenarios
+      </div>
+
+      <h2>
+        Market size is a planning range — not observed revenue.
+      </h2>
+    </div>
+
+    <div class="market-model-grid">
+
+      <article class="scenario">
+        <span class="assumption-badge">Planning Scenario</span>
+        <h3>Low</h3>
+        <strong>€24.2m</strong>
+        <p>Illustrative recurring annual market.</p>
+      </article>
+
+      <article class="scenario base">
+        <span class="assumption-badge">Base Planning Scenario</span>
+        <h3>Base</h3>
+        <strong>€40.7m</strong>
+        <p>Central institutional market model.</p>
+      </article>
+
+      <article class="scenario">
+        <span class="assumption-badge">Planning Scenario</span>
+        <h3>High</h3>
+        <strong>€65.7m</strong>
+        <p>Higher-ACV market scenario.</p>
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      <strong>Claims boundary:</strong>
+      these are Wenergy planning calculations based on institutional account counts
+      and modelled contract values. They are not existing Wenergy revenue and are
+      not official market-size estimates.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="grid-2">
+
+      <div>
+
+        <div class="section-head">
+          <div class="section-kicker">
+            Strong-Fit Customer
+          </div>
+
+          <h2>
+            What makes an account attractive?
+          </h2>
+        </div>
+
+        <div class="card">
+
+          <div class="fit-score">
+            <span>Multi-commune coordination need</span>
+            <span class="stars">★★★★★</span>
+          </div>
+
+          <div class="fit-score">
+            <span>Limited internal energy/GIS capacity</span>
+            <span class="stars">★★★★★</span>
+          </div>
+
+          <div class="fit-score">
+            <span>Active climate programme</span>
+            <span class="stars">★★★★★</span>
+          </div>
+
+          <div class="fit-score">
+            <span>Multiple local energy pathways</span>
+            <span class="stars">★★★★☆</span>
+          </div>
+
+          <div class="fit-score">
+            <span>Identifiable internal champion</span>
+            <span class="stars">★★★★★</span>
+          </div>
+
+          <div class="fit-score">
+            <span>Budget / procurement pathway</span>
+            <span class="stars">★★★★☆</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="section-head">
+          <div class="section-kicker">
+            Poor-Fit Customer
+          </div>
+
+          <h2>
+            Who should Wenergy avoid initially?
+          </h2>
+        </div>
+
+        <div class="card">
+
+          <p>
+            Early GTM should avoid accounts where:
+          </p>
+
+          <ul>
+            <li>no climate or energy project agenda exists;</li>
+            <li>no internal champion can own the workflow;</li>
+            <li>existing internal tools already solve the exact problem well;</li>
+            <li>procurement is impossible within the startup runway;</li>
+            <li>the buyer expects Wenergy to replace engineering feasibility;</li>
+            <li>the territory only wants a one-off static map with no recurring use.</li>
+          </ul>
+
+          <div class="guardrail">
+            A LARGE ADDRESSABLE MARKET DOES NOT MEAN EVERY TERRITORY IS A GOOD CUSTOMER.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="callout">
+      THE INITIAL COMMERCIAL QUESTION IS NOT
+      "HOW MANY TERRITORIES EXIST?"
+
+      <small style="font-size:18px;opacity:1;margin-top:15px">
+        It is: which territories experience enough project-prioritisation pain
+        to pay for a shared intelligence layer — and keep using it after the first scan?
+      </small>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Evidence Status
+      </div>
+
+      <h2>
+        Market structure is observed.
+        Commercial behaviour still needs validation.
+      </h2>
+    </div>
+
+    <div class="grid-3">
+
+      <article class="card">
+        <span class="fact-badge">Observed / External</span>
+        <h3>Institutional universe</h3>
+        <p>
+          French EPCI structure and policy context are supported by public sources.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="assumption-badge">To Validate</span>
+        <h3>Willingness to pay</h3>
+        <p>
+          Pilot pricing and annual licence values remain commercial hypotheses.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="assumption-badge">To Validate</span>
+        <h3>Repeatability</h3>
+        <p>
+          Customer acquisition, renewal and partner-channel performance require real pilots.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="actions">
+
+      <a class="btn btn-secondary"
+         href="../evidence/SOURCES.md">
+        Source Register
+      </a>
+
+      <a class="btn btn-secondary"
+         href="../evidence/CLAIMS_AND_GUARDRAILS.md">
+        Claims & Guardrails
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="02_solution.html">
+        ← 02 — The Solution
+      </a>
+
+      <a href="04_competition.html">
+        04 — Competition & White Space →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+      <strong>CONNECT • MATCH • ACT</strong><br>
+      Wenergy market sizing and pricing values are planning scenarios unless
+      explicitly identified as external facts. Commercial validation remains a
+      core pilot objective.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

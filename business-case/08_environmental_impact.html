@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy environmental impact — from better territorial decisions to implemented renewable and recoverable-energy projects, with transparent impact maturity and anti-greenwashing controls.">
+
+  <title>08 — Environmental Impact | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .impact-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact-hero::after {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      right: -280px;
+      top: -350px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(46,204,113,.17),
+          rgba(46,204,113,.035) 46%,
+          transparent 72%);
+      pointer-events: none;
+    }
+
+    .impact-chain {
+      display: grid;
+      grid-template-columns: repeat(7,1fr);
+      gap: 8px;
+      align-items: stretch;
+      margin-top: 30px;
+    }
+
+    .impact-stage {
+      min-height: 155px;
+      padding: 18px 14px;
+      border-radius: 17px;
+      border: 1px solid var(--border);
+      background: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .impact-stage strong {
+      color: var(--teal);
+      font-size: 14px;
+    }
+
+    .impact-stage-num {
+      display: inline-grid;
+      place-items: center;
+      margin: 0 auto 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .impact-stage.final {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+
+    .impact-stage.final strong {
+      color: white;
+    }
+
+    .impact-stage.final .impact-stage-num {
+      background: var(--gold);
+      color: var(--teal);
+    }
+
+    .impact-separation {
+      display: grid;
+      grid-template-columns: 1fr 120px 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .impact-side {
+      padding: 28px;
+      border-radius: 25px;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .impact-side.current {
+      border-top: 5px solid var(--forest);
+    }
+
+    .impact-side.future {
+      border-top: 5px solid var(--gold);
+    }
+
+    .impact-divider {
+      display: grid;
+      place-items: center;
+    }
+
+    .impact-divider-circle {
+      width: 96px;
+      height: 96px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font-weight: 900;
+      font-size: 11px;
+      line-height: 1.2;
+    }
+
+    .metric-bullets {
+      display: grid;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .metric-bullet {
+      padding: 11px 14px;
+      border-radius: 12px;
+      background: var(--mint);
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .multi-impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .multi-impact-card {
+      min-height: 210px;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .multi-impact-card strong {
+      display: block;
+      color: var(--forest);
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .multi-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--mint);
+      color: var(--forest);
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .waste-heat-flow {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .heat-step {
+      min-height: 145px;
+      padding: 18px;
+      border-radius: 17px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .heat-step strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 7px;
+    }
+
+    .circularity-loop {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .circular-step {
+      min-height: 140px;
+      padding: 18px;
+      border-radius: 17px;
+      border: 1px solid var(--border);
+      background: white;
+      text-align: center;
+    }
+
+    .circular-step strong {
+      color: var(--teal);
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .circular-step.energy {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+
+    .circular-step.energy strong {
+      color: white;
+    }
+
+    .compute-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .compute-card {
+      padding: 27px;
+      border-radius: 23px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .compute-card.good {
+      border-left: 5px solid var(--forest);
+    }
+
+    .compute-card.selective {
+      border-left: 5px solid var(--gold);
+    }
+
+    .compute-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      margin: 13px 0;
+      align-items: start;
+    }
+
+    .compute-mark {
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--mint);
+      color: var(--forest);
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    .maturity {
+      display: grid;
+      grid-template-columns: repeat(8,1fr);
+      gap: 7px;
+      align-items: stretch;
+    }
+
+    .maturity-stage {
+      min-height: 140px;
+      border-radius: 15px;
+      padding: 15px 11px;
+      background: white;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .maturity-stage.current {
+      background: rgba(46,204,113,.13);
+      border-color: rgba(30,110,58,.25);
+    }
+
+    .maturity-stage.measured {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+
+    .maturity-code {
+      display: block;
+      font-weight: 900;
+      color: var(--forest);
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+
+    .maturity-stage.measured .maturity-code {
+      color: var(--gold);
+    }
+
+    .impact-kpis {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .impact-kpi {
+      min-height: 175px;
+      padding: 22px;
+      border-radius: 19px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .impact-kpi strong {
+      display: block;
+      font-size: 27px;
+      color: var(--forest);
+      letter-spacing: -.04em;
+      margin-bottom: 8px;
+    }
+
+    .claim-flow {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 10px;
+    }
+
+    .claim-stage {
+      min-height: 150px;
+      border-radius: 17px;
+      padding: 19px;
+      text-align: center;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .claim-stage strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--teal);
+    }
+
+    .claim-stage.potential {
+      border-top: 5px solid #a7b6ac;
+    }
+
+    .claim-stage.estimated {
+      border-top: 5px solid var(--gold);
+    }
+
+    .claim-stage.validated {
+      border-top: 5px solid var(--leaf);
+    }
+
+    .claim-stage.measured {
+      border-top: 5px solid var(--forest);
+    }
+
+    .digital-kpis {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .digital-card {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid var(--border);
+    }
+
+    .digital-card strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 1050px) {
+
+      .impact-chain,
+      .maturity {
+        grid-template-columns: repeat(4,1fr);
+      }
+
+      .multi-impact-grid,
+      .impact-kpis,
+      .digital-kpis {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .waste-heat-flow,
+      .circularity-loop {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .impact-separation {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-divider {
+        padding: 5px 0;
+      }
+
+    }
+
+    @media (max-width: 680px) {
+
+      .impact-chain,
+      .multi-impact-grid,
+      .waste-heat-flow,
+      .circularity-loop,
+      .compute-grid,
+      .maturity,
+      .impact-kpis,
+      .claim-flow,
+      .digital-kpis {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a href="01_problem.html">01 Problem</a>
+      <a href="02_solution.html">02 Solution</a>
+      <a href="03_market.html">03 Market</a>
+      <a href="04_competition.html">04 Competition</a>
+      <a href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a class="active" href="08_environmental_impact.html">08 Impact</a>
+      <a href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero impact-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Environmental Impact
+    </div>
+
+    <div class="section-kicker">
+      Chapter 08 / 12
+    </div>
+
+    <h1>
+      Better energy decisions today.
+      <span style="color:var(--forest)">
+        Measurable physical impact when projects become real.
+      </span>
+    </h1>
+
+    <p class="lead">
+      Wenergy does not directly generate electricity, construct heat networks or
+      install renewable infrastructure. Its environmental role is upstream:
+      improve which projects are identified, prioritised and passed into professional
+      development.
+    </p>
+
+    <div class="actions">
+      <span class="tag">Enabling Impact</span>
+      <span class="tag">Multi-Energy</span>
+      <span class="tag">Circularity</span>
+      <span class="tag">Anti-Greenwashing</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Impact Chain
+      </div>
+
+      <h2>
+        Wenergy creates impact by improving the project pipeline.
+      </h2>
+    </div>
+
+    <div class="impact-chain">
+
+      <article class="impact-stage">
+        <div>
+          <span class="impact-stage-num">1</span>
+          <strong>Connected Evidence</strong>
+        </div>
+        <small>
+          Resources, demand, actors, constraints.
+        </small>
+      </article>
+
+      <article class="impact-stage">
+        <div>
+          <span class="impact-stage-num">2</span>
+          <strong>Better Matching</strong>
+        </div>
+        <small>
+          Stronger local relationships.
+        </small>
+      </article>
+
+      <article class="impact-stage">
+        <div>
+          <span class="impact-stage-num">3</span>
+          <strong>Better Prioritisation</strong>
+        </div>
+        <small>
+          Scarce attention focused.
+        </small>
+      </article>
+
+      <article class="impact-stage">
+        <div>
+          <span class="impact-stage-num">4</span>
+          <strong>Professional Investigation</strong>
+        </div>
+        <small>
+          Qualified feasibility.
+        </small>
+      </article>
+
+      <article class="impact-stage">
+        <div>
+          <span class="impact-stage-num">5</span>
+          <strong>Implementation</strong>
+        </div>
+        <small>
+          Real assets and infrastructure.
+        </small>
+      </article>
+
+      <article class="impact-stage">
+        <div>
+          <span class="impact-stage-num">6</span>
+          <strong>Energy Delivered</strong>
+        </div>
+        <small>
+          Renewable / recovered MWh.
+        </small>
+      </article>
+
+      <article class="impact-stage final">
+        <div>
+          <span class="impact-stage-num">7</span>
+          <strong>Measured Impact</strong>
+        </div>
+        <small>
+          Fossil displacement + verified emissions reduction.
+        </small>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        What Can Be Claimed Today?
+      </div>
+
+      <h2>
+        Enabling metrics now. Physical outcomes later.
+      </h2>
+    </div>
+
+    <div class="impact-separation">
+
+      <article class="impact-side current">
+
+        <span class="tag">Current / POC</span>
+
+        <h3>
+          Wenergy can measure enabling impact.
+        </h3>
+
+        <div class="metric-bullets">
+          <div class="metric-bullet">Screening opportunities</div>
+          <div class="metric-bullet">Evidence coverage</div>
+          <div class="metric-bullet">Pathway diversity</div>
+          <div class="metric-bullet">Actor context</div>
+          <div class="metric-bullet">Constraint context</div>
+          <div class="metric-bullet">Project maturity</div>
+          <div class="metric-bullet">Next-action completeness</div>
+        </div>
+
+      </article>
+
+      <div class="impact-divider">
+        <div class="impact-divider-circle">
+          IMPLEMENTATION
+          GATE
+        </div>
+      </div>
+
+      <article class="impact-side future">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          After Implementation
+        </span>
+
+        <h3>
+          Physical impact can then be measured.
+        </h3>
+
+        <div class="metric-bullets">
+          <div class="metric-bullet">Renewable MWh/year</div>
+          <div class="metric-bullet">Recovered heat MWh/year</div>
+          <div class="metric-bullet">Fossil energy displaced</div>
+          <div class="metric-bullet">Verified tCO2e avoided</div>
+          <div class="metric-bullet">Waste/residue valorised</div>
+          <div class="metric-bullet">Energy-cost changes</div>
+          <div class="metric-bullet">Operating project count</div>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:22px">
+      SCREENING POTENTIAL ≠ ENERGY GENERATED
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Multi-Energy Environmental Value
+      </div>
+
+      <h2>
+        The best local pathway depends on the territory.
+      </h2>
+    </div>
+
+    <div class="multi-impact-grid">
+
+      <article class="multi-impact-card">
+        <div class="multi-icon">☀</div>
+        <strong>Renewable Electricity</strong>
+        Solar, hydro and wind can contribute local renewable generation where
+        evidence and constraints support implementation.
+      </article>
+
+      <article class="multi-impact-card">
+        <div class="multi-icon">♨</div>
+        <strong>Renewable Heat</strong>
+        Geothermal and other heat pathways can reduce dependence on fossil heating.
+      </article>
+
+      <article class="multi-impact-card">
+        <div class="multi-icon">↺</div>
+        <strong>Recovered Energy</strong>
+        Waste heat can be reused rather than dissipated when compatible demand exists.
+      </article>
+
+      <article class="multi-impact-card">
+        <div class="multi-icon">♻</div>
+        <strong>Local Residues</strong>
+        Biomass, agricultural residues and selected waste streams may become
+        energy resources where appropriate.
+      </article>
+
+    </div>
+
+    <div class="callout callout-light" style="margin-top:24px">
+      THE TERRITORY SHOULD HELP DETERMINE THE TECHNOLOGY —
+      NOT THE TECHNOLOGY DETERMINE THE TERRITORY.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Waste Heat Example
+      </div>
+
+      <h2>
+        A resource becomes valuable only when the relationship works.
+      </h2>
+    </div>
+
+    <div class="waste-heat-flow">
+
+      <article class="heat-step">
+        <strong>01 — Source</strong>
+        Identify recoverable heat.
+      </article>
+
+      <article class="heat-step">
+        <strong>02 — Demand</strong>
+        Find compatible nearby need.
+      </article>
+
+      <article class="heat-step">
+        <strong>03 — Infrastructure</strong>
+        Evaluate spatial/network context.
+      </article>
+
+      <article class="heat-step">
+        <strong>04 — Actors</strong>
+        Connect source and demand operators.
+      </article>
+
+      <article class="heat-step">
+        <strong>05 — Feasibility</strong>
+        Qualified professionals validate the real project.
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      A waste-heat source alone is not a project.
+      A demand point alone is not a project.
+      Environmental value emerges from a technically and economically viable relationship.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Circularity
+      </div>
+
+      <h2>
+        Waste can become a resource — but energy recovery is not automatically the best answer.
+      </h2>
+    </div>
+
+    <div class="circularity-loop">
+
+      <article class="circular-step">
+        <strong>1 — Avoid</strong>
+        Prevent unnecessary resource use where possible.
+      </article>
+
+      <article class="circular-step">
+        <strong>2 — Reuse</strong>
+        Preserve direct utility before conversion.
+      </article>
+
+      <article class="circular-step">
+        <strong>3 — Material Recovery</strong>
+        Recycle valuable materials where appropriate.
+      </article>
+
+      <article class="circular-step energy">
+        <strong>4 — Energy Recovery</strong>
+        Use residual energy where technically justified.
+      </article>
+
+      <article class="circular-step">
+        <strong>5 — Disposal</strong>
+        Last resort.
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:20px">
+      ENERGY RECOVERY SHOULD NOT UNDERMINE HIGHER-VALUE CIRCULAR USES.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Environmental Decision Quality
+      </div>
+
+      <h2>
+        Avoiding weak projects can also create environmental value.
+      </h2>
+
+      <p>
+        A product does not create value only by advancing projects.
+        It can also prevent unnecessary studies, duplicated analysis and investment
+        effort on weak candidates.
+      </p>
+    </div>
+
+    <div class="grid-3">
+
+      <article class="card">
+        <span class="tag">Advance</span>
+        <h3>Strong Candidate</h3>
+        Move toward professional investigation.
+      </article>
+
+      <article class="card">
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          Validate
+        </span>
+        <h3>Evidence Gap</h3>
+        Collect missing evidence before spending feasibility budget.
+      </article>
+
+      <article class="card">
+        <span class="tag"
+              style="background:rgba(139,61,61,.09);color:#8B3D3D">
+          Deprioritise
+        </span>
+        <h3>Weak Candidate</h3>
+        Avoid unnecessary professional work.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Digital Environmental Footprint
+      </div>
+
+      <h2>
+        A climate platform should not treat compute as free.
+      </h2>
+    </div>
+
+    <div class="compute-grid">
+
+      <article class="compute-card good">
+
+        <span class="tag">Deterministic First</span>
+
+        <h3>
+          Use efficient methods for high-volume screening.
+        </h3>
+
+        <div class="compute-item">
+          <div class="compute-mark">✓</div>
+          <div>
+            Deterministic algorithms
+          </div>
+        </div>
+
+        <div class="compute-item">
+          <div class="compute-mark">✓</div>
+          <div>
+            Geospatial processing
+          </div>
+        </div>
+
+        <div class="compute-item">
+          <div class="compute-mark">✓</div>
+          <div>
+            Published factors
+          </div>
+        </div>
+
+        <div class="compute-item">
+          <div class="compute-mark">✓</div>
+          <div>
+            Statistical models
+          </div>
+        </div>
+
+        <div class="compute-item">
+          <div class="compute-mark">✓</div>
+          <div>
+            Caching and pre-computation
+          </div>
+        </div>
+
+      </article>
+
+      <article class="compute-card selective">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          Selective AI
+        </span>
+
+        <h3>
+          Use language models where language reasoning creates value.
+        </h3>
+
+        <div class="compute-item">
+          <div class="compute-mark">→</div>
+          <div>
+            Explain Project Lenses
+          </div>
+        </div>
+
+        <div class="compute-item">
+          <div class="compute-mark">→</div>
+          <div>
+            Extract structured evidence
+          </div>
+        </div>
+
+        <div class="compute-item">
+          <div class="compute-mark">→</div>
+          <div>
+            Translate and summarise
+          </div>
+        </div>
+
+        <div class="compute-item">
+          <div class="compute-mark">→</div>
+          <div>
+            Generate validation questions
+          </div>
+        </div>
+
+        <div class="guardrail">
+          LLM OUTPUT ≠ OBSERVED FACT
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Digital Efficiency Principles
+      </div>
+
+      <h2>
+        High decision value. Low unnecessary compute.
+      </h2>
+    </div>
+
+    <div class="digital-kpis">
+
+      <article class="digital-card">
+        <strong>Reuse Evidence</strong>
+        Avoid rebuilding datasets that already exist.
+      </article>
+
+      <article class="digital-card">
+        <strong>Compute Once</strong>
+        Cache stable calculations wherever practical.
+      </article>
+
+      <article class="digital-card">
+        <strong>Use Smaller Models</strong>
+        Select the minimum sufficient model for the task.
+      </article>
+
+      <article class="digital-card">
+        <strong>Measure Later</strong>
+        Track compute per actionable Project Lens as the product scales.
+      </article>
+
+    </div>
+
+    <div class="callout callout-light" style="margin-top:22px">
+      MAXIMISE TERRITORIAL DECISION VALUE PER UNIT OF COMPUTE.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Impact Maturity
+      </div>
+
+      <h2>
+        Environmental certainty should increase as projects mature.
+      </h2>
+    </div>
+
+    <div class="maturity">
+
+      <article class="maturity-stage current">
+        <span class="maturity-code">I0</span>
+        Screening Potential
+      </article>
+
+      <article class="maturity-stage current">
+        <span class="maturity-code">I1</span>
+        Evidence-Backed Candidate
+      </article>
+
+      <article class="maturity-stage">
+        <span class="maturity-code">I2</span>
+        Professional Feasibility
+      </article>
+
+      <article class="maturity-stage">
+        <span class="maturity-code">I3</span>
+        Funded / Permitted
+      </article>
+
+      <article class="maturity-stage">
+        <span class="maturity-code">I4</span>
+        Construction
+      </article>
+
+      <article class="maturity-stage">
+        <span class="maturity-code">I5</span>
+        Operating Asset
+      </article>
+
+      <article class="maturity-stage">
+        <span class="maturity-code">I6</span>
+        Measured Energy
+      </article>
+
+      <article class="maturity-stage measured">
+        <span class="maturity-code">I7</span>
+        Verified Emissions Impact
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      Current Wenergy evidence is predominantly concentrated at the I0–I1 enabling
+      stages.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Future Physical Impact Dashboard
+      </div>
+
+      <h2>
+        Once projects operate, impact can move from estimates to evidence.
+      </h2>
+    </div>
+
+    <div class="impact-kpis">
+
+      <article class="impact-kpi">
+        <strong>MWh/year</strong>
+        Renewable electricity generated.
+      </article>
+
+      <article class="impact-kpi">
+        <strong>MWh/year</strong>
+        Renewable / recovered heat delivered.
+      </article>
+
+      <article class="impact-kpi">
+        <strong>tCO2e/year</strong>
+        Verified avoided emissions.
+      </article>
+
+      <article class="impact-kpi">
+        <strong>tonnes/year</strong>
+        Residues / waste streams valorised.
+      </article>
+
+      <article class="impact-kpi">
+        <strong>MWh/year</strong>
+        Fossil energy displaced.
+      </article>
+
+      <article class="impact-kpi">
+        <strong>%</strong>
+        Local renewable-energy share.
+      </article>
+
+      <article class="impact-kpi">
+        <strong>€ / %</strong>
+        Energy-cost change where attributable.
+      </article>
+
+      <article class="impact-kpi">
+        <strong>#</strong>
+        Operating projects supported by Wenergy.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Anti-Greenwashing Framework
+      </div>
+
+      <h2>
+        Every impact value should reveal its maturity.
+      </h2>
+    </div>
+
+    <div class="claim-flow">
+
+      <article class="claim-stage potential">
+        <strong>POTENTIAL</strong>
+        Screening suggests an opportunity may exist.
+      </article>
+
+      <article class="claim-stage estimated">
+        <strong>ESTIMATED</strong>
+        Transparent model calculates a possible outcome.
+      </article>
+
+      <article class="claim-stage validated">
+        <strong>EXPERT-VALIDATED</strong>
+        Qualified professional confirms methodology / feasibility evidence.
+      </article>
+
+      <article class="claim-stage measured">
+        <strong>MEASURED</strong>
+        Operating evidence records the actual outcome.
+      </article>
+
+    </div>
+
+    <div class="callout" style="margin-top:25px">
+      POTENTIAL ≠ ACHIEVED IMPACT
+
+      <small>
+        Wenergy should never convert an early screening estimate directly into a
+        headline carbon or energy claim.
+      </small>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Current Environmental Evidence
+      </div>
+
+      <h2>
+        Real POC scale — carefully interpreted.
+      </h2>
+    </div>
+
+    <div class="grid-4">
+
+      <article class="card metric">
+        <div class="metric-value">32,628</div>
+        <div class="metric-label">
+          Screening Opportunities
+        </div>
+      </article>
+
+      <article class="card metric">
+        <div class="metric-value">8</div>
+        <div class="metric-label">
+          Energy Pathways
+        </div>
+      </article>
+
+      <article class="card metric">
+        <div class="metric-value">14,174</div>
+        <div class="metric-label">
+          Opportunities with Constraint Context
+        </div>
+      </article>
+
+      <article class="card metric">
+        <div class="metric-value">25,234</div>
+        <div class="metric-label">
+          MWh/y Observed Address-Level Energy Evidence
+        </div>
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      25,234.248 MWh/year refers to observed address-level energy evidence associated
+      with current POC actors. It is not energy generated by Wenergy and is not
+      verified avoided fossil energy.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="callout">
+
+      A TERRITORY CANNOT IMPLEMENT THE RIGHT CLEAN-ENERGY PROJECTS
+      IF IT CANNOT FIRST SEE, COMPARE AND PRIORITISE THEM EFFECTIVELY.
+
+      <small style="font-size:17px;opacity:1;margin-top:15px">
+        Wenergy's environmental thesis is to strengthen that upstream decision layer
+        — then measure real environmental outcomes only when downstream projects
+        become implemented and operational.
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="07_foix_pilot.html">
+        ← 07 — Foix Pilot
+      </a>
+
+      <a href="09_social_impact.html">
+        09 — Social Impact →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+      <strong>CONNECT • MATCH • ACT</strong><br>
+      Wenergy currently measures primarily upstream enabling indicators.
+      Physical energy and emissions impacts require professional validation,
+      implementation and operational measurement.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

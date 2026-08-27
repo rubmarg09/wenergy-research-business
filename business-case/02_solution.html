@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy — Territorial Energy Intelligence & Orchestration. CONNECT • MATCH • ACT through evidence, actors, energy pathways and Project Lenses.">
+
+  <title>02 — The Solution | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .solution-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .solution-hero::before {
+      content: "";
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      left: -360px;
+      top: -320px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(46,204,113,.12) 0%,
+          rgba(46,204,113,.03) 45%,
+          transparent 70%);
+      pointer-events: none;
+    }
+
+    .solution-pillars {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .pillar {
+      position: relative;
+      min-height: 260px;
+      padding: 29px;
+      border-radius: 25px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.84);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pillar-number {
+      font-size: 70px;
+      font-weight: 900;
+      color: rgba(30,110,58,.07);
+      position: absolute;
+      right: 17px;
+      top: 1px;
+      letter-spacing: -.08em;
+    }
+
+    .pillar h3 {
+      font-size: 29px;
+      color: var(--forest);
+      margin: 30px 0 11px;
+      letter-spacing: -.035em;
+    }
+
+    .pillar-arrow {
+      font-size: 26px;
+      color: var(--gold);
+      margin-top: 18px;
+    }
+
+    .architecture {
+      display: grid;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .architecture-layer {
+      position: relative;
+      display: grid;
+      grid-template-columns: 195px 1fr;
+      gap: 24px;
+      align-items: center;
+      min-height: 80px;
+      padding: 17px 23px;
+      border-radius: 18px;
+      border: 1px solid rgba(13,59,59,.10);
+      background: rgba(255,255,255,.75);
+    }
+
+    .architecture-layer::after {
+      content: "↓";
+      position: absolute;
+      left: 89px;
+      bottom: -24px;
+      z-index: 5;
+      color: var(--forest);
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .architecture-layer:last-child::after {
+      content: "";
+    }
+
+    .architecture-label {
+      font-weight: 900;
+      color: var(--teal);
+      font-size: 15px;
+    }
+
+    .architecture-desc {
+      color: #4d6159;
+      font-size: 14px;
+    }
+
+    .engine-layer {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+
+    .engine-layer .architecture-label,
+    .engine-layer .architecture-desc {
+      color: white;
+    }
+
+    .lens-wrap {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) minmax(350px,.92fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .lens-card {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.97), rgba(221,239,227,.6));
+      border: 1px solid var(--border);
+      border-radius: 29px;
+      box-shadow: var(--shadow);
+      padding: 29px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lens-card::before {
+      content: "PROJECT LENS";
+      position: absolute;
+      right: -6px;
+      top: 13px;
+      font-size: 11px;
+      letter-spacing: .12em;
+      font-weight: 900;
+      color: rgba(30,110,58,.32);
+      transform: rotate(90deg) translateX(54px);
+      transform-origin: right top;
+    }
+
+    .lens-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      padding-right: 22px;
+    }
+
+    .lens-title {
+      margin: 5px 0 3px;
+      font-size: 25px;
+      color: var(--teal);
+      line-height: 1.12;
+    }
+
+    .lens-status {
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: var(--mint);
+      color: var(--forest);
+      font-weight: 900;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .lens-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+      margin-top: 22px;
+    }
+
+    .lens-item {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(13,59,59,.09);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .lens-item span {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .07em;
+      color: var(--grey);
+      margin-bottom: 6px;
+    }
+
+    .lens-item strong {
+      color: var(--teal);
+      font-size: 14px;
+    }
+
+    .lens-next {
+      margin-top: 14px;
+      padding: 18px;
+      background: var(--forest);
+      color: white;
+      border-radius: 16px;
+    }
+
+    .lens-next span {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      opacity: .72;
+      letter-spacing: .08em;
+      font-weight: 800;
+    }
+
+    .lens-next strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 17px;
+    }
+
+    .lens-explain {
+      padding: 28px;
+      background: var(--teal);
+      border-radius: 28px;
+      color: white;
+    }
+
+    .lens-explain h3 {
+      color: white;
+      font-size: 28px;
+    }
+
+    .lens-explain p {
+      opacity: .9;
+    }
+
+    .lens-step {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+      margin: 17px 0;
+    }
+
+    .lens-step-num {
+      flex: 0 0 35px;
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      color: var(--teal);
+      font-weight: 900;
+      border-radius: 50%;
+      font-size: 12px;
+    }
+
+    .pathways {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 13px;
+    }
+
+    .pathway {
+      padding: 19px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--border);
+      min-height: 128px;
+    }
+
+    .pathway strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 5px;
+    }
+
+    .pathway-count {
+      font-size: 25px;
+      color: var(--forest);
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .pathway small {
+      color: var(--grey);
+    }
+
+    .evidence-ladder {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 8px;
+      align-items: end;
+      margin-top: 30px;
+    }
+
+    .evidence-step {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 17px 8px;
+      border-radius: 14px;
+      font-size: 11px;
+      font-weight: 900;
+      min-height: 90px;
+      border: 1px solid rgba(13,59,59,.08);
+    }
+
+    .ev-assumed {
+      background: rgba(196,157,70,.12);
+    }
+
+    .ev-inferred {
+      background: rgba(234,226,207,.9);
+    }
+
+    .ev-estimated {
+      background: rgba(221,239,227,.72);
+    }
+
+    .ev-observed {
+      background: rgba(46,204,113,.18);
+    }
+
+    .ev-actor {
+      background: rgba(30,110,58,.18);
+    }
+
+    .ev-expert {
+      background: var(--forest);
+      color: white;
+    }
+
+    .mode-comparison {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .mode-card {
+      padding: 28px;
+      border-radius: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mode-divider {
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .mode-feature {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mode-feature:last-child {
+      border-bottom: 0;
+    }
+
+    .mode-feature strong {
+      display: block;
+      color: var(--teal);
+      font-size: 14px;
+    }
+
+    .loop {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      border-radius: 25px;
+      background: var(--teal);
+    }
+
+    .loop-node {
+      color: white;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      padding: 10px 13px;
+      border: 1px solid rgba(255,255,255,.21);
+      border-radius: 999px;
+    }
+
+    .loop-arrow {
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .boundary-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .boundary-card {
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .boundary-card.wenergy {
+      border-top: 5px solid var(--forest);
+    }
+
+    .boundary-card.professional {
+      border-top: 5px solid var(--gold);
+    }
+
+    .boundary-arrow {
+      font-size: 31px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .maturity-row {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-top: 17px;
+    }
+
+    .maturity {
+      padding: 8px 9px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 900;
+      background: var(--mint);
+      color: var(--forest);
+    }
+
+    .maturity.external {
+      background: var(--beige-2);
+      color: var(--teal);
+    }
+
+    @media (max-width: 920px) {
+
+      .solution-pillars,
+      .pathways {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lens-wrap,
+      .boundary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .boundary-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+      }
+
+      .evidence-ladder {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .mode-comparison {
+        grid-template-columns: 1fr;
+      }
+
+      .mode-divider {
+        transform: rotate(90deg);
+      }
+
+    }
+
+    @media (max-width: 620px) {
+
+      .solution-pillars,
+      .pathways,
+      .evidence-ladder,
+      .lens-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .architecture-layer {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .architecture-layer::after {
+        left: 50%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a href="01_problem.html">01 Problem</a>
+      <a class="active" href="02_solution.html">02 Solution</a>
+      <a href="03_market.html">03 Market</a>
+      <a href="04_competition.html">04 Competition</a>
+      <a href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero solution-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Solution
+    </div>
+
+    <div class="section-kicker">
+      Chapter 02 / 12
+    </div>
+
+    <h1>
+      From fragmented evidence
+      <span style="color:var(--forest)">
+        to an actionable territorial project pipeline.
+      </span>
+    </h1>
+
+    <p class="lead">
+      Wenergy is a Territorial Energy Intelligence & Orchestration platform
+      designed to connect local energy needs, renewable and recoverable resources,
+      infrastructure, actors and constraints — then turn stronger relationships
+      into explainable Project Lenses and real next actions.
+    </p>
+
+    <div class="actions">
+      <span class="tag">Territorial Intelligence</span>
+      <span class="tag">Multi-Energy</span>
+      <span class="tag">Evidence-Aware</span>
+      <span class="tag">Action-Oriented</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        The Wenergy Model
+      </div>
+
+      <h2>
+        CONNECT • MATCH • ACT
+      </h2>
+
+      <p>
+        The product is structured around three simple functions that together
+        transform territorial information into a project-development workflow.
+      </p>
+    </div>
+
+    <div class="solution-pillars">
+
+      <article class="pillar">
+        <div class="pillar-number">01</div>
+        <span class="tag">CONNECT</span>
+
+        <h3>Connect the territory.</h3>
+
+        <p>
+          Bring together energy resources, demand, actors, infrastructure,
+          buildings, environmental context and local evidence.
+        </p>
+
+        <div class="pillar-arrow">↘</div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-number">02</div>
+        <span class="tag">MATCH</span>
+
+        <h3>Find meaningful relationships.</h3>
+
+        <p>
+          Identify plausible relationships between local needs and renewable or
+          recoverable-energy resources across multiple pathways.
+        </p>
+
+        <div class="pillar-arrow">↘</div>
+      </article>
+
+      <article class="pillar">
+        <div class="pillar-number">03</div>
+        <span class="tag">ACT</span>
+
+        <h3>Make the next step explicit.</h3>
+
+        <p>
+          Convert stronger candidates into evidence-backed Project Lenses ready for
+          actor validation and professional investigation.
+        </p>
+
+        <div class="pillar-arrow">→</div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Product Architecture
+      </div>
+
+      <h2>
+        One system — several intelligence layers.
+      </h2>
+
+      <p>
+        Wenergy separates raw evidence, actor context, project logic and user-facing
+        action so every output remains explainable.
+      </p>
+    </div>
+
+    <div class="architecture">
+
+      <div class="architecture-layer">
+        <div class="architecture-label">
+          01 — Data / Energy Fabric
+        </div>
+
+        <div class="architecture-desc">
+          Territorial datasets, buildings, energy context, environmental and planning
+          layers, infrastructure and pathway-specific evidence.
+        </div>
+      </div>
+
+      <div class="architecture-layer">
+        <div class="architecture-label">
+          02 — Actor Layer
+        </div>
+
+        <div class="architecture-desc">
+          Municipalities, facilities, businesses, farmers, operators, residents,
+          experts and other actors linked to project relationships.
+        </div>
+      </div>
+
+      <div class="architecture-layer engine-layer">
+        <div class="architecture-label">
+          03 — Wenergy Engine
+        </div>
+
+        <div class="architecture-desc">
+          Deterministic screening, matching, evidence classification,
+          context enrichment, ranking and data-gap logic.
+        </div>
+      </div>
+
+      <div class="architecture-layer">
+        <div class="architecture-label">
+          04 — Opportunities
+        </div>
+
+        <div class="architecture-desc">
+          Candidate renewable and recoverable-energy relationships across
+          multiple pathways.
+        </div>
+      </div>
+
+      <div class="architecture-layer">
+        <div class="architecture-label">
+          05 — Project Lens
+        </div>
+
+        <div class="architecture-desc">
+          Structured project object containing evidence, actors, constraints,
+          uncertainty, maturity and next actions.
+        </div>
+      </div>
+
+      <div class="architecture-layer">
+        <div class="architecture-label">
+          06 — Map / UI / Action
+        </div>
+
+        <div class="architecture-desc">
+          Territorial exploration, decision support, engagement, professional handoff
+          and project follow-up.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Core Product Object
+      </div>
+
+      <h2>
+        The Project Lens turns a possibility into a decision object.
+      </h2>
+
+      <p>
+        Instead of showing users another isolated marker on a map, Wenergy structures
+        each stronger opportunity around the evidence and decisions required to move
+        it forward.
+      </p>
+    </div>
+
+    <div class="lens-wrap">
+
+      <article class="lens-card">
+
+        <div class="lens-top">
+
+          <div>
+            <span class="lens-status">
+              M2 — Context Enriched
+            </span>
+
+            <h3 class="lens-title">
+              Recoverable Heat → Public Building Cluster
+            </h3>
+
+            <p style="margin:4px 0;color:var(--grey)">
+              Illustrative Project Lens structure
+            </p>
+          </div>
+
+        </div>
+
+        <div class="lens-grid">
+
+          <div class="lens-item">
+            <span>Resource</span>
+            <strong>Potential waste-heat source</strong>
+          </div>
+
+          <div class="lens-item">
+            <span>Need</span>
+            <strong>Nearby heat demand</strong>
+          </div>
+
+          <div class="lens-item">
+            <span>Actors</span>
+            <strong>Source + demand operator + territory</strong>
+          </div>
+
+          <div class="lens-item">
+            <span>Evidence</span>
+            <strong>Observed + contextual</strong>
+          </div>
+
+          <div class="lens-item">
+            <span>Constraint</span>
+            <strong>Professional review required</strong>
+          </div>
+
+          <div class="lens-item">
+            <span>Confidence</span>
+            <strong>Medium</strong>
+          </div>
+
+          <div class="lens-item">
+            <span>Data Gap</span>
+            <strong>Temperature + operating hours</strong>
+          </div>
+
+          <div class="lens-item">
+            <span>Professional Stage</span>
+            <strong>Pre-feasibility candidate</strong>
+          </div>
+
+        </div>
+
+        <div class="lens-next">
+          <span>Next Action</span>
+          <strong>
+            Confirm heat-source characteristics and initiate professional
+            heat-recovery pre-feasibility.
+          </strong>
+        </div>
+
+      </article>
+
+      <aside class="lens-explain">
+
+        <span class="tag"
+              style="background:rgba(255,255,255,.14);color:white">
+          Why it matters
+        </span>
+
+        <h3>
+          A project is more than a coordinate.
+        </h3>
+
+        <p>
+          The Lens creates a common object that different users can understand,
+          validate and progressively improve.
+        </p>
+
+        <div class="lens-step">
+          <div class="lens-step-num">1</div>
+          <div>
+            <strong>See what is known.</strong><br>
+            Evidence and provenance remain visible.
+          </div>
+        </div>
+
+        <div class="lens-step">
+          <div class="lens-step-num">2</div>
+          <div>
+            <strong>See what is missing.</strong><br>
+            Data gaps become explicit tasks.
+          </div>
+        </div>
+
+        <div class="lens-step">
+          <div class="lens-step-num">3</div>
+          <div>
+            <strong>See who matters.</strong><br>
+            Relevant actors become part of the project object.
+          </div>
+        </div>
+
+        <div class="lens-step">
+          <div class="lens-step-num">4</div>
+          <div>
+            <strong>See what happens next.</strong><br>
+            Each priority Lens finishes with an operational next action.
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Multi-Energy by Design
+      </div>
+
+      <h2>
+        Eight pathways. One project-intelligence framework.
+      </h2>
+
+      <p>
+        Wenergy is not designed around a predetermined technology.
+        Pathway-specific logic plugs into a common territorial orchestration layer.
+      </p>
+    </div>
+
+    <div class="pathways">
+
+      <div class="pathway">
+        <strong>Solar</strong>
+        <div class="pathway-count">32,215</div>
+        <small>Current screening opportunities</small>
+      </div>
+
+      <div class="pathway">
+        <strong>Waste Heat</strong>
+        <div class="pathway-count">151</div>
+        <small>Relationship-centric pathway</small>
+      </div>
+
+      <div class="pathway">
+        <strong>Biomass</strong>
+        <div class="pathway-count">127</div>
+        <small>Local resource pathway</small>
+      </div>
+
+      <div class="pathway">
+        <strong>Hydro</strong>
+        <div class="pathway-count">79</div>
+        <small>Architecture breadth</small>
+      </div>
+
+      <div class="pathway">
+        <strong>Geothermal</strong>
+        <div class="pathway-count">28</div>
+        <small>Heat potential</small>
+      </div>
+
+      <div class="pathway">
+        <strong>Wind</strong>
+        <div class="pathway-count">12</div>
+        <small>Context-dependent</small>
+      </div>
+
+      <div class="pathway">
+        <strong>Agricultural Biogas</strong>
+        <div class="pathway-count">8</div>
+        <small>Actor/resource relationship</small>
+      </div>
+
+      <div class="pathway">
+        <strong>Municipal Waste</strong>
+        <div class="pathway-count">8</div>
+        <small>Recoverable-energy pathway</small>
+      </div>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      <strong>Current POC reality:</strong>
+      solar represents approximately 98.7% of present screening volume.
+      This reflects current evidence and algorithm maturity — not a solar-only
+      product strategy.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Evidence Architecture
+      </div>
+
+      <h2>
+        Wenergy does not hide uncertainty.
+      </h2>
+
+      <p>
+        Every important input can retain an evidence class so users know whether
+        they are looking at a fact, estimate, inference, confirmation or assumption.
+      </p>
+    </div>
+
+    <div class="evidence-ladder">
+
+      <div class="evidence-step ev-assumed">
+        ASSUMED
+      </div>
+
+      <div class="evidence-step ev-inferred">
+        INFERRED
+      </div>
+
+      <div class="evidence-step ev-estimated">
+        ESTIMATED
+      </div>
+
+      <div class="evidence-step ev-observed">
+        OBSERVED
+      </div>
+
+      <div class="evidence-step ev-actor">
+        ACTOR-CONFIRMED
+      </div>
+
+      <div class="evidence-step ev-expert">
+        EXPERT-VALIDATED
+      </div>
+
+    </div>
+
+    <div class="callout callout-light"
+         style="margin-top:28px">
+
+      MISSING EVIDENCE SHOULD LOWER CONFIDENCE —
+      NOT CREATE FALSE PRECISION.
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        One Evidence Base — Two Depths
+      </div>
+
+      <h2>
+        Simple enough to understand.
+        Detailed enough to challenge.
+      </h2>
+
+    </div>
+
+    <div class="mode-comparison">
+
+      <article class="mode-card">
+
+        <span class="tag">Simple Mode</span>
+
+        <h3>
+          For communities and non-specialist users
+        </h3>
+
+        <div class="mode-feature">
+          <strong>What is the project?</strong>
+          Clear project explanation.
+        </div>
+
+        <div class="mode-feature">
+          <strong>Why might it matter?</strong>
+          Human-readable local value.
+        </div>
+
+        <div class="mode-feature">
+          <strong>What is known?</strong>
+          Evidence without unnecessary technical detail.
+        </div>
+
+        <div class="mode-feature">
+          <strong>What is uncertain?</strong>
+          Confidence remains visible.
+        </div>
+
+        <div class="mode-feature">
+          <strong>What happens next?</strong>
+          Clear maturity and next action.
+        </div>
+
+      </article>
+
+      <div class="mode-divider">
+        ↔
+      </div>
+
+      <article class="mode-card">
+
+        <span class="tag">Expert Mode</span>
+
+        <h3>
+          For territorial teams and professionals
+        </h3>
+
+        <div class="mode-feature">
+          <strong>Evidence provenance</strong>
+          Source and evidence class.
+        </div>
+
+        <div class="mode-feature">
+          <strong>Methodology</strong>
+          Calculation and matching logic.
+        </div>
+
+        <div class="mode-feature">
+          <strong>Constraints</strong>
+          Planning and environmental context.
+        </div>
+
+        <div class="mode-feature">
+          <strong>Assumptions</strong>
+          Visible uncertainty and data gaps.
+        </div>
+
+        <div class="mode-feature">
+          <strong>Professional handoff</strong>
+          Technical questions for deeper investigation.
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:22px">
+      ONE EVIDENCE BASE — DIFFERENT DEPTHS OF EXPLANATION.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Product Journey
+      </div>
+
+      <h2>
+        Intelligence should lead somewhere.
+      </h2>
+
+      <p>
+        Wenergy is designed as a loop rather than a one-time diagnostic.
+      </p>
+    </div>
+
+    <div class="loop">
+
+      <span class="loop-node">EXPLORE</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">CONNECT</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">MATCH</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">UNDERSTAND</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">DECIDE</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">ENGAGE</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">ACT</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">FOLLOW</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">LEARN</span>
+      <span class="loop-arrow">→</span>
+
+      <span class="loop-node">MEASURE</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Professional Boundary
+      </div>
+
+      <h2>
+        Wenergy prepares the project.
+        Professionals validate it.
+      </h2>
+    </div>
+
+    <div class="boundary-grid">
+
+      <article class="boundary-card wenergy">
+
+        <span class="tag">Wenergy Core</span>
+
+        <h3>
+          Orientation & Project Intelligence
+        </h3>
+
+        <p>
+          Wenergy identifies, structures, enriches and prioritises candidate
+          relationships.
+        </p>
+
+        <div class="maturity-row">
+          <span class="maturity">M0 Candidate</span>
+          <span class="maturity">M1 Evidence</span>
+          <span class="maturity">M2 Context</span>
+          <span class="maturity">M3 Selected</span>
+        </div>
+
+      </article>
+
+      <div class="boundary-arrow">
+        →
+      </div>
+
+      <article class="boundary-card professional">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.15);color:#7e6320">
+          Professional Domain
+        </span>
+
+        <h3>
+          Feasibility & Implementation
+        </h3>
+
+        <p>
+          Qualified professionals, project owners and authorities perform
+          engineering, permitting, financing and implementation.
+        </p>
+
+        <div class="maturity-row">
+          <span class="maturity external">M4 Feasibility</span>
+          <span class="maturity external">M5 Funded</span>
+          <span class="maturity external">M6 Implemented</span>
+          <span class="maturity external">M7 Measured</span>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="callout"
+         style="margin-top:28px">
+
+      ORIENT AND CONNECT — NOT REPLACE.
+
+      <small>
+        Wenergy is designed to strengthen the existing professional and public
+        energy-transition ecosystem, not substitute for it.
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Product Proof
+      </div>
+
+      <h2>
+        The architecture already exists as a functional POC.
+      </h2>
+    </div>
+
+    <div class="grid-4">
+
+      <div class="card metric">
+        <div class="metric-value">32,628</div>
+        <div class="metric-label">
+          Screening Opportunities
+        </div>
+      </div>
+
+      <div class="card metric">
+        <div class="metric-value">38,069</div>
+        <div class="metric-label">
+          Actors
+        </div>
+      </div>
+
+      <div class="card metric">
+        <div class="metric-value">14,174</div>
+        <div class="metric-label">
+          Opportunities with Constraint Context
+        </div>
+      </div>
+
+      <div class="card metric">
+        <div class="metric-value">25,234</div>
+        <div class="metric-label">
+          MWh/y Observed Address-Level Energy Evidence
+        </div>
+      </div>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+
+      <strong>Evidence boundary:</strong>
+      these are POC outputs.
+      They do not represent implemented projects, realised generation or
+      verified environmental impact.
+
+    </div>
+
+    <div class="actions">
+
+      <a class="btn btn-secondary"
+         href="../evidence/POC_METRICS.md">
+        View POC Metrics
+      </a>
+
+      <a class="btn btn-secondary"
+         href="../evidence/METHODOLOGY.md">
+        View Methodology
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="callout">
+
+      WENERGY IS NOT SIMPLY A SYSTEM THAT SHOWS POSSIBLE RENEWABLE-ENERGY PROJECTS.
+
+      <small style="font-size:17px;opacity:1;margin-top:15px">
+
+        It is a shared territorial intelligence and orchestration infrastructure
+        that connects fragmented energy data, local energy flows, community needs,
+        actors, constraints and professional processes so communities can understand
+        what is possible, decide what deserves attention and connect the strongest
+        opportunities to real-world action.
+
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="01_problem.html">
+        ← 01 — The Problem
+      </a>
+
+      <a href="03_market.html">
+        03 — Market & Customers →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+
+      <strong>CONNECT • MATCH • ACT</strong><br>
+
+      Wenergy is currently a functional POC / pre-pilot product.
+      Screening supports territorial orientation and prioritisation.
+      Qualified professionals validate, engineer and implement.
+
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

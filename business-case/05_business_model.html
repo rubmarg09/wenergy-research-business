@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy business model — B2G2C territorial SaaS, paid pilot, annual licence, pricing, procurement and unit economics.">
+
+  <title>05 — Business Model | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .business-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .business-hero::after {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      left: -330px;
+      top: -360px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(196,157,70,.15),
+          rgba(196,157,70,.035) 45%,
+          transparent 72%);
+      pointer-events: none;
+    }
+
+    .model-flow {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr 80px 1fr;
+      gap: 14px;
+      align-items: stretch;
+      margin-top: 30px;
+    }
+
+    .model-node {
+      min-height: 230px;
+      border-radius: 24px;
+      padding: 25px;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .model-node.primary {
+      border-top: 5px solid var(--forest);
+    }
+
+    .model-node.secondary {
+      border-top: 5px solid var(--gold);
+    }
+
+    .model-node.community {
+      border-top: 5px solid var(--teal);
+    }
+
+    .model-node h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .model-arrow {
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--forest);
+    }
+
+    .value-exchange {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .value-box {
+      min-height: 190px;
+      padding: 22px;
+      background: rgba(255,255,255,.85);
+      border: 1px solid var(--border);
+      border-radius: 19px;
+    }
+
+    .value-box strong {
+      display: block;
+      color: var(--forest);
+      font-size: 18px;
+      margin-bottom: 7px;
+    }
+
+    .revenue-ladder {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 12px;
+      align-items: end;
+    }
+
+    .price-card {
+      min-height: 260px;
+      border-radius: 22px;
+      padding: 24px;
+      background: white;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.pilot {
+      border: 2px solid var(--forest);
+      box-shadow: var(--shadow);
+    }
+
+    .price-card.future {
+      border-top: 4px solid var(--gold);
+    }
+
+    .price {
+      display: block;
+      font-size: 34px;
+      font-weight: 900;
+      color: var(--forest);
+      letter-spacing: -.045em;
+      margin: 12px 0 8px;
+    }
+
+    .price small {
+      font-size: 13px;
+      color: var(--grey);
+      font-weight: 500;
+    }
+
+    .price-card ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+
+    .pricing-note {
+      margin-top: 20px;
+      padding: 18px 22px;
+      border-radius: 18px;
+      background: rgba(196,157,70,.11);
+      color: #685420;
+      border: 1px solid rgba(196,157,70,.22);
+      font-weight: 700;
+    }
+
+    .pilot-conversion {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .conversion-step {
+      min-height: 150px;
+      padding: 18px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .conversion-step strong {
+      color: var(--teal);
+      display: block;
+      margin-top: 8px;
+    }
+
+    .conversion-num {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .procurement-path {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 8px;
+    }
+
+    .procure-step {
+      min-height: 135px;
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+    }
+
+    .procure-step strong {
+      color: var(--teal);
+      display: block;
+      margin: 8px 0 4px;
+    }
+
+    .revenue-stack {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .revenue-core {
+      padding: 29px;
+      border-radius: 27px;
+      background: var(--teal);
+      color: white;
+    }
+
+    .revenue-core h3 {
+      color: white;
+      font-size: 28px;
+    }
+
+    .revenue-core strong {
+      color: var(--gold);
+    }
+
+    .revenue-secondary {
+      display: grid;
+      gap: 12px;
+    }
+
+    .secondary-box {
+      padding: 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .secondary-box strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+
+    .unit-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .unit-card {
+      padding: 22px;
+      min-height: 180px;
+      border-radius: 19px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .unit-card .unit-value {
+      display: block;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--forest);
+      letter-spacing: -.04em;
+      margin: 8px 0;
+    }
+
+    .unit-card small {
+      color: var(--grey);
+    }
+
+    .cost-structure {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .cost-card {
+      padding: 25px;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .cost-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cost-row:last-child {
+      border-bottom: 0;
+    }
+
+    .cost-row strong {
+      color: var(--teal);
+    }
+
+    .flywheel {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .fly-card {
+      min-height: 165px;
+      padding: 20px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid var(--border);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .fly-card strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 7px;
+    }
+
+    .fly-card.central {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+
+    .fly-card.central strong {
+      color: white;
+    }
+
+    .neutrality {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .neutrality-card {
+      padding: 25px;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .neutrality-card.good {
+      border-top: 5px solid var(--forest);
+    }
+
+    .neutrality-card.bad {
+      border-top: 5px solid #8B3D3D;
+    }
+
+    .neutrality-arrow {
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--forest);
+    }
+
+    .guard-chip {
+      display: inline-block;
+      padding: 6px 9px;
+      margin: 3px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--forest);
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .05em;
+    }
+
+    @media (max-width: 1000px) {
+
+      .model-flow,
+      .revenue-ladder,
+      .value-exchange,
+      .unit-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .model-arrow {
+        display: none;
+      }
+
+      .pilot-conversion,
+      .procurement-path {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .revenue-stack,
+      .cost-structure,
+      .neutrality {
+        grid-template-columns: 1fr;
+      }
+
+      .neutrality-arrow {
+        transform: rotate(90deg);
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .model-flow,
+      .revenue-ladder,
+      .value-exchange,
+      .pilot-conversion,
+      .procurement-path,
+      .unit-grid,
+      .flywheel {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a href="01_problem.html">01 Problem</a>
+      <a href="02_solution.html">02 Solution</a>
+      <a href="03_market.html">03 Market</a>
+      <a href="04_competition.html">04 Competition</a>
+      <a class="active" href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero business-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Business Model
+    </div>
+
+    <div class="section-kicker">
+      Chapter 05 / 12
+    </div>
+
+    <h1>
+      Public value and commercial sustainability
+      <span style="color:var(--forest)">
+        can reinforce each other.
+      </span>
+    </h1>
+
+    <p class="lead">
+      Wenergy's preferred model is B2G2C: a territorial public organisation pays
+      for shared project-intelligence infrastructure, while the value extends
+      across communes, professionals, businesses, farmers and communities.
+    </p>
+
+    <div class="actions">
+      <span class="tag">B2G2C</span>
+      <span class="tag">Paid Pilot Entry</span>
+      <span class="tag">Recurring Territorial Licence</span>
+      <span class="tag">Vendor Neutral</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Business Model
+      </div>
+
+      <h2>
+        One buyer. Multiple users. Shared territorial value.
+      </h2>
+
+      <p>
+        Wenergy is designed so the party with the institutional mandate and
+        purchasing capacity can fund the infrastructure, without requiring every
+        beneficiary to become an individual paying customer.
+      </p>
+    </div>
+
+    <div class="model-flow">
+
+      <article class="model-node primary">
+        <span class="tag">Pays</span>
+        <h3>Territorial Buyer</h3>
+        <p>
+          EPCI, energy syndicate or other territorial public organisation funds
+          the pilot and/or annual licence.
+        </p>
+      </article>
+
+      <div class="model-arrow">→</div>
+
+      <article class="model-node secondary">
+        <span class="tag">Uses</span>
+        <h3>Territorial & Professional Users</h3>
+        <p>
+          Technical teams, energy leads, ALECs, experts and partner organisations
+          use deeper project-intelligence capabilities.
+        </p>
+      </article>
+
+      <div class="model-arrow">→</div>
+
+      <article class="model-node community">
+        <span class="tag">Benefits</span>
+        <h3>Communes & Community</h3>
+        <p>
+          Smaller communes, businesses, farmers and residents gain clearer access
+          to local energy-project information and participation pathways.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="callout callout-light" style="margin-top:24px">
+      TERRITORY PAYS → SHARED LOCAL CAPABILITY → BROADER COMMUNITY ACCESS
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Value Exchange
+      </div>
+
+      <h2>
+        The model only works if every side gets meaningful value.
+      </h2>
+    </div>
+
+    <div class="value-exchange">
+
+      <article class="value-box">
+        <strong>Territory</strong>
+        Better prioritisation, less fragmented analysis, project memory and clearer
+        professional handoff.
+      </article>
+
+      <article class="value-box">
+        <strong>Professional Ecosystem</strong>
+        Better-prepared candidate projects and less low-value discovery work.
+      </article>
+
+      <article class="value-box">
+        <strong>Local Actors</strong>
+        Clearer project context, visible evidence gaps and more structured engagement.
+      </article>
+
+      <article class="value-box">
+        <strong>Community</strong>
+        Better understanding of local opportunities without requiring premium access
+        to core territorial information.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Commercial Entry
+      </div>
+
+      <h2>
+        Start with a bounded paid pilot.
+      </h2>
+
+      <p>
+        The first product is not a massive transformation programme.
+        It is a focused Territorial Opportunity Prioritisation Pilot designed to
+        prove decision value before asking the customer to commit to recurring use.
+      </p>
+    </div>
+
+    <div class="grid-2">
+
+      <article class="card">
+
+        <span class="tag">Entry Product</span>
+
+        <h3>Territorial Opportunity Prioritisation Pilot</h3>
+
+        <p>
+          Proposed scope can include:
+        </p>
+
+        <ul>
+          <li>territorial opportunity overview;</li>
+          <li>multi-energy screening;</li>
+          <li>Project Lens longlist;</li>
+          <li>priority shortlist;</li>
+          <li>data-gap register;</li>
+          <li>actor map;</li>
+          <li>professional handoff plan;</li>
+          <li>pilot value report.</li>
+        </ul>
+
+      </article>
+
+      <article class="card">
+
+        <span class="assumption-badge">Pricing Assumption</span>
+
+        <h3>Initial pilot corridor</h3>
+
+        <div class="metric-value" style="margin:15px 0">
+          €7.5k–€15k
+        </div>
+
+        <p>
+          Central planning assumption:
+          <strong>~€11k HT</strong>.
+        </p>
+
+        <div class="guardrail">
+          PRICE IS A COMMERCIAL HYPOTHESIS TO VALIDATE — NOT PROVEN WTP.
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Pilot → Licence
+      </div>
+
+      <h2>
+        The pilot must create recurring value, not just a one-time report.
+      </h2>
+    </div>
+
+    <div class="pilot-conversion">
+
+      <div class="conversion-step">
+        <span class="conversion-num">1</span>
+        <strong>Scope</strong>
+        Define territory, pathways and decision questions.
+      </div>
+
+      <div class="conversion-step">
+        <span class="conversion-num">2</span>
+        <strong>Prioritise</strong>
+        Create evidence-backed candidate pipeline.
+      </div>
+
+      <div class="conversion-step">
+        <span class="conversion-num">3</span>
+        <strong>Validate</strong>
+        Measure usefulness and decision impact.
+      </div>
+
+      <div class="conversion-step">
+        <span class="conversion-num">4</span>
+        <strong>Convert</strong>
+        Move from project to annual territorial licence.
+      </div>
+
+      <div class="conversion-step">
+        <span class="conversion-num">5</span>
+        <strong>Expand</strong>
+        Add pathways, users, modules or territories.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Pricing Architecture
+      </div>
+
+      <h2>
+        A progressive ladder tied to territorial complexity.
+      </h2>
+
+      <p>
+        All recurring prices shown below are current planning assumptions and must be
+        validated through real procurement and customer discovery.
+      </p>
+    </div>
+
+    <div class="revenue-ladder">
+
+      <article class="price-card pilot">
+        <span class="assumption-badge">Entry</span>
+        <h3>Pilot</h3>
+        <span class="price">€7.5k–€15k</span>
+        <ul>
+          <li>bounded territory scope;</li>
+          <li>priority pathways;</li>
+          <li>shortlist + value review.</li>
+        </ul>
+      </article>
+
+      <article class="price-card">
+        <span class="assumption-badge">Annual</span>
+        <h3>Standard EPCI</h3>
+        <span class="price">~€19k <small>/ year</small></span>
+        <ul>
+          <li>core platform;</li>
+          <li>territorial users;</li>
+          <li>project portfolio.</li>
+        </ul>
+      </article>
+
+      <article class="price-card">
+        <span class="assumption-badge">Annual</span>
+        <h3>Mature EPCI</h3>
+        <span class="price">~€24k <small>/ year</small></span>
+        <ul>
+          <li>broader workflows;</li>
+          <li>more users;</li>
+          <li>deeper portfolio use.</li>
+        </ul>
+      </article>
+
+      <article class="price-card">
+        <span class="assumption-badge">Annual</span>
+        <h3>Agglomeration</h3>
+        <span class="price">~€36k <small>/ year</small></span>
+        <ul>
+          <li>higher complexity;</li>
+          <li>integration needs;</li>
+          <li>larger portfolio.</li>
+        </ul>
+      </article>
+
+      <article class="price-card future">
+        <span class="assumption-badge">Annual</span>
+        <h3>Multi-Territory</h3>
+        <span class="price">~€55k <small>/ year</small></span>
+        <ul>
+          <li>syndicate use;</li>
+          <li>multiple territories;</li>
+          <li>distribution leverage.</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <div class="pricing-note">
+      Pricing should ultimately be validated against procurement friction,
+      delivery cost, willingness to pay and measurable customer value — not selected
+      simply to maximise theoretical TAM.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Revenue Architecture
+      </div>
+
+      <h2>
+        Recurring territorial SaaS at the core.
+      </h2>
+    </div>
+
+    <div class="revenue-stack">
+
+      <article class="revenue-core">
+
+        <span class="tag"
+              style="background:rgba(255,255,255,.14);color:white">
+          Core Revenue
+        </span>
+
+        <h3>
+          Annual Territorial Licence
+        </h3>
+
+        <p>
+          The long-term business depends on recurring value:
+        </p>
+
+        <ul>
+          <li>new evidence refreshes;</li>
+          <li>new project opportunities;</li>
+          <li>project maturity tracking;</li>
+          <li>actor updates;</li>
+          <li>portfolio memory;</li>
+          <li>new pathways;</li>
+          <li>community/project communication.</li>
+        </ul>
+
+        <p>
+          <strong>
+            SaaS sustainability requires recurring decision value.
+          </strong>
+        </p>
+
+      </article>
+
+      <div class="revenue-secondary">
+
+        <article class="secondary-box">
+          <strong>Paid Pilot</strong>
+          Initial validation and onboarding revenue.
+        </article>
+
+        <article class="secondary-box">
+          <strong>Expansion Modules</strong>
+          Additional pathways, territories or advanced capabilities.
+        </article>
+
+        <article class="secondary-box">
+          <strong>Limited Services</strong>
+          Bounded onboarding or implementation support without becoming a
+          consulting-heavy business.
+        </article>
+
+        <article class="secondary-box">
+          <strong>Future Premium</strong>
+          Optional individual features only if they do not undermine equitable access
+          to core community information.
+        </article>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Public Procurement
+      </div>
+
+      <h2>
+        The product must be easy enough to buy.
+      </h2>
+
+      <p>
+        Public-sector fit depends not only on product value but on a procurement
+        pathway that is proportionate, documented and understandable.
+      </p>
+    </div>
+
+    <div class="procurement-path">
+
+      <article class="procure-step">
+        <span class="conversion-num">1</span>
+        <strong>Discovery</strong>
+        Confirm pain and buyer.
+      </article>
+
+      <article class="procure-step">
+        <span class="conversion-num">2</span>
+        <strong>Scope</strong>
+        Define bounded pilot.
+      </article>
+
+      <article class="procure-step">
+        <span class="conversion-num">3</span>
+        <strong>Budget</strong>
+        Confirm internal funding path.
+      </article>
+
+      <article class="procure-step">
+        <span class="conversion-num">4</span>
+        <strong>Procurement</strong>
+        Follow applicable public rules.
+      </article>
+
+      <article class="procure-step">
+        <span class="conversion-num">5</span>
+        <strong>Pilot</strong>
+        Deliver measurable value.
+      </article>
+
+      <article class="procure-step">
+        <span class="conversion-num">6</span>
+        <strong>Renew</strong>
+        Convert to recurring licence.
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      <strong>Boundary:</strong>
+      this business case deliberately avoids hardcoding legal procurement thresholds
+      without current legal verification. Actual procurement must follow the rules
+      applicable to the buyer and contract.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Unit Economics
+      </div>
+
+      <h2>
+        The economics improve only if delivery becomes repeatable.
+      </h2>
+    </div>
+
+    <div class="unit-grid">
+
+      <article class="unit-card">
+        <span class="assumption-badge">Target</span>
+        <h3>Gross Margin</h3>
+        <span class="unit-value">~75%</span>
+        <small>Year 5 target in Base scenario.</small>
+      </article>
+
+      <article class="unit-card">
+        <span class="assumption-badge">Target</span>
+        <h3>Workflow Reuse</h3>
+        <span class="unit-value">≥70%</span>
+        <small>Second-territory replication target.</small>
+      </article>
+
+      <article class="unit-card">
+        <span class="assumption-badge">Illustrative</span>
+        <h3>CAC Range</h3>
+        <span class="unit-value">€4k–€15k</span>
+        <small>Scenario range, not observed CAC.</small>
+      </article>
+
+      <article class="unit-card">
+        <span class="assumption-badge">Target</span>
+        <h3>Pilot Delivery</h3>
+        <span class="unit-value">≤35–40h</span>
+        <small>Standardised direct-delivery target to validate.</small>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Cost Structure
+      </div>
+
+      <h2>
+        Software economics — without pretending data integration is free.
+      </h2>
+    </div>
+
+    <div class="cost-structure">
+
+      <article class="cost-card">
+
+        <span class="tag">Cost of Service</span>
+
+        <h3>Direct / Variable</h3>
+
+        <div class="cost-row">
+          <strong>Cloud & data processing</strong>
+          <span>Variable</span>
+        </div>
+
+        <div class="cost-row">
+          <strong>Territory onboarding</strong>
+          <span>Declining target</span>
+        </div>
+
+        <div class="cost-row">
+          <strong>Customer support</strong>
+          <span>Usage-linked</span>
+        </div>
+
+        <div class="cost-row">
+          <strong>Selected AI/API usage</strong>
+          <span>Controlled</span>
+        </div>
+
+      </article>
+
+      <article class="cost-card">
+
+        <span class="tag">Operating Expense</span>
+
+        <h3>Fixed / Growth</h3>
+
+        <div class="cost-row">
+          <strong>Product & engineering</strong>
+          <span>Core</span>
+        </div>
+
+        <div class="cost-row">
+          <strong>Commercial / partnerships</strong>
+          <span>Growth</span>
+        </div>
+
+        <div class="cost-row">
+          <strong>Security / governance</strong>
+          <span>Scale requirement</span>
+        </div>
+
+        <div class="cost-row">
+          <strong>Administration</strong>
+          <span>Lean initially</span>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:20px">
+      IF EVERY NEW TERRITORY REQUIRES A CUSTOM REBUILD, THE SaaS MODEL FAILS.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Growth Flywheel
+      </div>
+
+      <h2>
+        The strongest acquisition channel should eventually be proof.
+      </h2>
+    </div>
+
+    <div class="flywheel">
+
+      <article class="fly-card">
+        <strong>1 — Paid Pilot</strong>
+        Prove value in a real territory.
+      </article>
+
+      <article class="fly-card central">
+        <strong>2 — Reference Evidence</strong>
+        Show measurable decision improvement.
+      </article>
+
+      <article class="fly-card">
+        <strong>3 — Warm Introduction</strong>
+        Reduce institutional trust barrier.
+      </article>
+
+      <article class="fly-card">
+        <strong>4 — Second Territory</strong>
+        Demonstrate replication.
+      </article>
+
+      <article class="fly-card central">
+        <strong>5 — Partner Channel</strong>
+        Syndicates / ALECs multiply reach.
+      </article>
+
+      <article class="fly-card">
+        <strong>6 — Recurring Portfolio</strong>
+        More customers improve reuse and product learning.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Commercial Neutrality
+      </div>
+
+      <h2>
+        Revenue must never buy technical priority.
+      </h2>
+    </div>
+
+    <div class="neutrality">
+
+      <article class="neutrality-card good">
+
+        <span class="tag">Allowed</span>
+
+        <h3>Pay for capabilities</h3>
+
+        <p>
+          Customers may pay for:
+        </p>
+
+        <div>
+          <span class="guard-chip">Licence Access</span>
+          <span class="guard-chip">More Users</span>
+          <span class="guard-chip">More Territories</span>
+          <span class="guard-chip">Advanced Modules</span>
+          <span class="guard-chip">Support</span>
+        </div>
+
+      </article>
+
+      <div class="neutrality-arrow">
+        ≠
+      </div>
+
+      <article class="neutrality-card bad">
+
+        <span class="tag"
+              style="background:rgba(139,61,61,.1);color:#8B3D3D">
+          Not Allowed
+        </span>
+
+        <h3>Pay for ranking</h3>
+
+        <p>
+          No actor should be able to pay to:
+        </p>
+
+        <div>
+          <span class="guard-chip"
+                style="background:rgba(139,61,61,.08);color:#8B3D3D">
+            Boost Technology
+          </span>
+
+          <span class="guard-chip"
+                style="background:rgba(139,61,61,.08);color:#8B3D3D">
+            Promote Supplier
+          </span>
+
+          <span class="guard-chip"
+                style="background:rgba(139,61,61,.08);color:#8B3D3D">
+            Alter Evidence
+          </span>
+
+          <span class="guard-chip"
+                style="background:rgba(139,61,61,.08);color:#8B3D3D">
+            Hide Constraints
+          </span>
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="callout" style="margin-top:25px">
+      PAYMENT MAY PURCHASE ACCESS TO CAPABILITIES.
+      PAYMENT MUST NOT PURCHASE TECHNICAL PRIORITY.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Business Model Evidence Boundary
+      </div>
+
+      <h2>
+        The architecture is defined.
+        The economics still need real customer evidence.
+      </h2>
+    </div>
+
+    <div class="grid-3">
+
+      <article class="card">
+        <span class="tag">Defined</span>
+        <h3>B2G2C model</h3>
+        <p>
+          Territorial buyer + professional users + community access is the
+          current preferred architecture.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="assumption-badge">To Validate</span>
+        <h3>Pricing</h3>
+        <p>
+          Pilot and annual licence prices require real procurement evidence.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="assumption-badge">To Validate</span>
+        <h3>Recurring value</h3>
+        <p>
+          Renewal, CAC, gross margin and lifetime value require operating customers.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="04_competition.html">
+        ← 04 — Competition
+      </a>
+
+      <a href="06_financial_case.html">
+        06 — Financial Case →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+      <strong>CONNECT • MATCH • ACT</strong><br>
+      Pricing, CAC, delivery-hour and margin values shown on this page are planning
+      assumptions or future targets unless explicitly stated otherwise.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

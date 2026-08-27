@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy — The Territorial Energy Execution-Intelligence Gap. Why fragmented local energy evidence prevents strong opportunities from becoming actionable projects.">
+
+  <title>01 — The Problem | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .problem-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .problem-hero::after {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      border: 1px solid rgba(46,204,113,.17);
+      border-radius: 50%;
+      right: -180px;
+      top: -150px;
+      box-shadow:
+        0 0 0 55px rgba(46,204,113,.035),
+        0 0 0 110px rgba(46,204,113,.025);
+      pointer-events: none;
+    }
+
+    .hero-number {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      color: var(--forest);
+      text-transform: uppercase;
+    }
+
+    .hero-statement {
+      max-width: 920px;
+    }
+
+    .problem-line {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 14px;
+      align-items: stretch;
+      margin-top: 26px;
+    }
+
+    .problem-node {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .problem-node strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .fragmentation-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 14px;
+    }
+
+    .fragment {
+      min-height: 140px;
+      padding: 21px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.8);
+      border-radius: 18px;
+    }
+
+    .fragment-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--mint);
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .gap-panel {
+      display: grid;
+      grid-template-columns: 1fr 110px 1fr;
+      align-items: center;
+      gap: 24px;
+      padding: 32px;
+      border-radius: 28px;
+      background: var(--teal);
+      color: white;
+    }
+
+    .gap-side {
+      padding: 8px;
+    }
+
+    .gap-side h3 {
+      color: white;
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .gap-side ul {
+      margin: 0;
+      padding-left: 19px;
+      opacity: .9;
+    }
+
+    .gap-centre {
+      display: grid;
+      place-items: center;
+    }
+
+    .gap-circle {
+      width: 100px;
+      height: 100px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--teal);
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 1.25;
+      box-shadow: 0 0 0 12px rgba(196,157,70,.13);
+    }
+
+    .foix-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .foix-card::before {
+      content: "FOIX";
+      position: absolute;
+      right: -8px;
+      bottom: -36px;
+      font-weight: 900;
+      font-size: 110px;
+      color: rgba(30,110,58,.045);
+      letter-spacing: -.08em;
+    }
+
+    .context-strip {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .context-stat {
+      border-top: 3px solid var(--forest);
+      padding-top: 12px;
+    }
+
+    .context-stat strong {
+      display: block;
+      font-size: 28px;
+      color: var(--forest);
+      letter-spacing: -.04em;
+    }
+
+    .context-stat span {
+      display: block;
+      color: var(--grey);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    .pipeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .pipeline-row {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .pipeline-label {
+      text-align: right;
+      font-weight: 800;
+      color: var(--teal);
+      font-size: 13px;
+    }
+
+    .pipeline-bar {
+      min-height: 51px;
+      display: flex;
+      align-items: center;
+      border-radius: 12px;
+      padding: 0 17px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(46,204,113,.24),
+          rgba(30,110,58,.08)
+        );
+      border: 1px solid rgba(30,110,58,.11);
+      font-weight: 700;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 17px;
+      align-items: start;
+      margin: 12px 0;
+    }
+
+    .principle-num {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      font-weight: 900;
+    }
+
+    .source-mini {
+      font-size: 12px;
+      color: var(--grey);
+    }
+
+    @media (max-width: 900px) {
+
+      .problem-line {
+        grid-template-columns: 1fr;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      .fragmentation-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gap-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .gap-centre {
+        padding: 14px 0;
+      }
+
+      .context-strip {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media (max-width: 620px) {
+
+      .fragmentation-grid,
+      .context-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .pipeline-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .pipeline-label {
+        text-align: left;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a class="active" href="01_problem.html">01 Problem</a>
+      <a href="02_solution.html">02 Solution</a>
+      <a href="03_market.html">03 Market</a>
+      <a href="04_competition.html">04 Competition</a>
+      <a href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero problem-hero">
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Problem
+    </div>
+
+    <div class="hero-number">
+      Chapter 01 / 12
+    </div>
+
+    <div class="hero-statement">
+
+      <h1>
+        Local energy potential exists.
+        <span style="color:var(--forest)">
+          Turning it into projects is the hard part.
+        </span>
+      </h1>
+
+      <p class="lead">
+        Territories already have public data, climate plans, renewable resources,
+        professional expertise and local actors. What they often lack is a shared
+        intelligence layer capable of connecting those fragments into a small,
+        explainable and actionable project pipeline.
+      </p>
+
+    </div>
+
+    <div class="actions">
+      <span class="tag">Foix / Ariège Pilot Context</span>
+      <span class="tag">Public Sector</span>
+      <span class="tag">Multi-Energy</span>
+      <span class="tag">Evidence First</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        The Core Problem
+      </div>
+
+      <h2>
+        The Territorial Energy Execution-Intelligence Gap
+      </h2>
+
+      <p>
+        The transition challenge is not only identifying renewable potential.
+        It is connecting scattered evidence to the actors, constraints and
+        professional processes required to move promising ideas toward implementation.
+      </p>
+    </div>
+
+    <div class="problem-line">
+
+      <div class="problem-node">
+        <strong>Potential exists</strong>
+        Solar, heat, biomass, hydro, geothermal, biogas, waste streams and other
+        local resources may already exist inside the territory.
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="problem-node">
+        <strong>Evidence is fragmented</strong>
+        Data sits across public portals, GIS files, studies, spreadsheets,
+        institutional knowledge and technical tools.
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="problem-node">
+        <strong>Action slows down</strong>
+        Teams still have to determine what deserves attention, who is involved,
+        what is missing and what professional step comes next.
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">Fragmentation</div>
+
+      <h2>
+        The information exists in pieces.
+      </h2>
+
+      <p>
+        No single fragment is useless. The problem is that each answers only
+        part of the project-development question.
+      </p>
+    </div>
+
+    <div class="fragmentation-grid">
+
+      <div class="fragment">
+        <div class="fragment-icon">⌂</div>
+        <h3>Buildings & Demand</h3>
+        <p>
+          Public buildings, businesses, facilities and local demand may be mapped
+          separately from resource potential.
+        </p>
+      </div>
+
+      <div class="fragment">
+        <div class="fragment-icon">◉</div>
+        <h3>Energy Resources</h3>
+        <p>
+          Solar, heat, biomass, hydro or geothermal evidence may exist in specialist
+          datasets or pathway-specific tools.
+        </p>
+      </div>
+
+      <div class="fragment">
+        <div class="fragment-icon">⌘</div>
+        <h3>Actors</h3>
+        <p>
+          Municipalities, farmers, companies, operators, residents and experts
+          each hold different pieces of project knowledge.
+        </p>
+      </div>
+
+      <div class="fragment">
+        <div class="fragment-icon">◇</div>
+        <h3>Infrastructure</h3>
+        <p>
+          Networks, roads, heat systems and grid context influence whether a
+          relationship can become a real project.
+        </p>
+      </div>
+
+      <div class="fragment">
+        <div class="fragment-icon">△</div>
+        <h3>Constraints</h3>
+        <p>
+          Planning, environmental and regulatory context can materially change
+          investigation priorities.
+        </p>
+      </div>
+
+      <div class="fragment">
+        <div class="fragment-icon">→</div>
+        <h3>Professional Action</h3>
+        <p>
+          Engineers and advisers still need a defensible starting point before
+          feasibility, permitting and implementation.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="gap-panel">
+
+      <div class="gap-side">
+
+        <h3>
+          What territories already have
+        </h3>
+
+        <ul>
+          <li>Public/open datasets</li>
+          <li>GIS and maps</li>
+          <li>PCAET and climate strategies</li>
+          <li>Technical studies</li>
+          <li>Consultants and advisers</li>
+          <li>Funding programmes</li>
+          <li>Local institutional knowledge</li>
+        </ul>
+
+      </div>
+
+      <div class="gap-centre">
+        <div class="gap-circle">
+          THE<br>
+          GAP
+        </div>
+      </div>
+
+      <div class="gap-side">
+
+        <h3>
+          What is still difficult
+        </h3>
+
+        <ul>
+          <li>Compare pathways together</li>
+          <li>Connect resource to real need</li>
+          <li>Identify relevant actors</li>
+          <li>Expose uncertainty</li>
+          <li>Prioritise limited study budgets</li>
+          <li>Preserve project memory</li>
+          <li>Define the next action</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Why Foix
+      </div>
+
+      <h2>
+        A real territory where capacity matters.
+      </h2>
+
+      <p>
+        Pays Foix-Varilhes is useful not because it is an easy test environment,
+        but because it combines rural geography, multiple communes, diverse energy
+        resources and limited public-sector capacity.
+      </p>
+    </div>
+
+    <article class="card foix-card">
+
+      <div class="grid-2">
+
+        <div>
+
+          <h3>
+            Pays Foix-Varilhes
+          </h3>
+
+          <p>
+            The pilot context includes a mixed rural and small-urban territory in
+            Ariège, with local public buildings, agricultural activity, businesses,
+            residents and multiple potential renewable/recoverable pathways.
+          </p>
+
+          <div class="guardrail">
+            MORE ENERGY DATA DOES NOT AUTOMATICALLY CREATE MORE ENERGY ACCESS.
+          </div>
+
+        </div>
+
+        <div class="context-strip">
+
+          <div class="context-stat">
+            <strong>42</strong>
+            <span>Communes</span>
+          </div>
+
+          <div class="context-stat">
+            <strong>33,679</strong>
+            <span>Residents</span>
+          </div>
+
+          <div class="context-stat">
+            <strong>444 km²</strong>
+            <span>Territory</span>
+          </div>
+
+          <div class="context-stat">
+            <strong>16.1%</strong>
+            <span>EPCI poverty rate</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+    <div class="source" style="margin-top:18px">
+      <strong>Local context:</strong>
+      INSEE socioeconomic evidence and Pays Foix-Varilhes territorial context.
+      Detailed references are available in the public
+      <a href="../evidence/SOURCES.md">Source Register</a>.
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        The Scale Problem
+      </div>
+
+      <h2>
+        Finding opportunities is not enough.
+      </h2>
+
+      <p>
+        A screening engine may surface thousands of candidates. A local authority
+        cannot commission professional feasibility for all of them.
+      </p>
+    </div>
+
+    <div class="grid-4">
+
+      <div class="card metric">
+        <div class="metric-value">32,628</div>
+        <div class="metric-label">
+          Screening Opportunities
+        </div>
+      </div>
+
+      <div class="card metric">
+        <div class="metric-value">38,069</div>
+        <div class="metric-label">
+          Actors
+        </div>
+      </div>
+
+      <div class="card metric">
+        <div class="metric-value">8</div>
+        <div class="metric-label">
+          Energy Pathways
+        </div>
+      </div>
+
+      <div class="card metric">
+        <div class="metric-value">85,734</div>
+        <div class="metric-label">
+          Building Polygons
+        </div>
+      </div>
+
+    </div>
+
+    <div style="height:28px"></div>
+
+    <div class="callout callout-light">
+      The goal is not to maximise opportunity count.
+      The goal is to concentrate scarce human and professional attention
+      on the strongest relationships.
+    </div>
+
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        The Missing Transformation
+      </div>
+
+      <h2>
+        From a huge possibility space to a defensible investigation pipeline.
+      </h2>
+    </div>
+
+    <div class="pipeline">
+
+      <div class="pipeline-row">
+        <div class="pipeline-label">
+          Territorial Evidence
+        </div>
+
+        <div class="pipeline-bar">
+          Resources + demand + actors + buildings + infrastructure + constraints
+        </div>
+      </div>
+
+      <div class="pipeline-row">
+        <div class="pipeline-label">
+          Screening Universe
+        </div>
+
+        <div class="pipeline-bar">
+          Thousands of possible local relationships
+        </div>
+      </div>
+
+      <div class="pipeline-row">
+        <div class="pipeline-label">
+          Evidence Review
+        </div>
+
+        <div class="pipeline-bar">
+          Stronger candidates, visible uncertainty and data gaps
+        </div>
+      </div>
+
+      <div class="pipeline-row">
+        <div class="pipeline-label">
+          Territorial Priority
+        </div>
+
+        <div class="pipeline-bar">
+          Projects that deserve local attention
+        </div>
+      </div>
+
+      <div class="pipeline-row">
+        <div class="pipeline-label">
+          Professional Investigation
+        </div>
+
+        <div class="pipeline-bar">
+          Small, evidence-backed pipeline for expert feasibility
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Problem Guardrails
+      </div>
+
+      <h2>
+        Wenergy deliberately avoids turning screening into certainty.
+      </h2>
+    </div>
+
+    <div class="grid-2">
+
+      <div>
+
+        <div class="principle">
+          <div class="principle-num">01</div>
+          <div>
+            <h3>Screening ≠ Feasibility</h3>
+            <p>
+              Early evidence is intended to guide deeper professional investigation.
+            </p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <div class="principle-num">02</div>
+          <div>
+            <h3>Relationship ≠ Ownership</h3>
+            <p>
+              Spatial or actor relationships do not prove legal control of an asset.
+            </p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <div class="principle-num">03</div>
+          <div>
+            <h3>Demand Context ≠ Metered Demand</h3>
+            <p>
+              Estimated demand must not be presented as observed consumption.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="principle">
+          <div class="principle-num">04</div>
+          <div>
+            <h3>Constraint ≠ Automatic Exclusion</h3>
+            <p>
+              Planning and environmental context requires professional interpretation.
+            </p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <div class="principle-num">05</div>
+          <div>
+            <h3>Priority ≠ Success Probability</h3>
+            <p>
+              Priority means investigation value under current evidence.
+            </p>
+          </div>
+        </div>
+
+        <div class="principle">
+          <div class="principle-num">06</div>
+          <div>
+            <h3>Potential ≠ Impact</h3>
+            <p>
+              Physical impact exists only after projects are implemented and measured.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+
+    <div class="callout">
+      THE CORE QUESTION
+      <small style="font-size:19px; opacity:1; margin-top:14px">
+        Across local renewable and recoverable-energy pathways,
+        which candidate relationships deserve professional investigation first —
+        and why?
+      </small>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Sources & Evidence
+      </div>
+
+      <h2>
+        Built on public evidence, not unsupported claims.
+      </h2>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card">
+        <span class="tag">Institutional</span>
+        <h3>French territorial structure</h3>
+        <p>
+          DGCL, Ministry for Ecological Transition and other public sources provide
+          the institutional market context.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="tag">Local</span>
+        <h3>Foix evidence</h3>
+        <p>
+          INSEE and territorial evidence support socioeconomic and geographic context.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="tag">Product</span>
+        <h3>Wenergy POC</h3>
+        <p>
+          Product metrics are reported separately from external facts and business
+          assumptions.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-secondary"
+         href="../evidence/SOURCES.md">
+        Source Register
+      </a>
+
+      <a class="btn btn-secondary"
+         href="../evidence/CLAIMS_AND_GUARDRAILS.md">
+        Claims & Guardrails
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="../index.html">
+        ← Wenergy Home
+      </a>
+
+      <a href="02_solution.html">
+        02 — The Solution →
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+
+      <strong>CONNECT • MATCH • ACT</strong><br>
+
+      Wenergy is currently a functional POC / pre-pilot product.
+      Screening supports territorial orientation and prioritisation.
+      Qualified professionals validate, engineer and implement.
+
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

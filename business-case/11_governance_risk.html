@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy governance and risk — neutrality, evidence governance, privacy, AI boundaries, security, risk mitigation and escalation criteria.">
+
+  <title>11 — Governance & Risk | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .gov-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gov-hero::after {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      left: -330px;
+      top: -360px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(196,157,70,.17),
+          rgba(196,157,70,.03) 46%,
+          transparent 72%);
+      pointer-events: none;
+    }
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .principle-card {
+      min-height: 210px;
+      padding: 22px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .principle-card strong {
+      display: block;
+      color: var(--forest);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .neutrality-flow {
+      display: grid;
+      grid-template-columns: 1fr 100px 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .neutrality-card {
+      padding: 27px;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .neutrality-card.allowed {
+      border-top: 5px solid var(--forest);
+    }
+
+    .neutrality-card.blocked {
+      border-top: 5px solid #8B3D3D;
+    }
+
+    .neutrality-centre {
+      display: grid;
+      place-items: center;
+    }
+
+    .neutrality-circle {
+      width: 94px;
+      height: 94px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    .evidence-stack {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 8px;
+    }
+
+    .evidence-card {
+      min-height: 135px;
+      padding: 15px;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+      background: white;
+      text-align: center;
+    }
+
+    .evidence-card strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .data-governance-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .data-card {
+      min-height: 190px;
+      padding: 21px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+    }
+
+    .data-card strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 7px;
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .ai-card {
+      padding: 26px;
+      border-radius: 23px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .ai-card.good {
+      border-left: 5px solid var(--forest);
+    }
+
+    .ai-card.bad {
+      border-left: 5px solid #8B3D3D;
+    }
+
+    .ai-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ai-item:last-child {
+      border-bottom: 0;
+    }
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .security-card {
+      min-height: 190px;
+      padding: 21px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .security-card strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 7px;
+    }
+
+    .risk-table-wrap {
+      overflow-x: auto;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .risk-table {
+      width: 100%;
+      min-width: 1100px;
+      border-collapse: collapse;
+    }
+
+    .risk-table th,
+    .risk-table td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid rgba(13,59,59,.05);
+      text-align: left;
+      vertical-align: top;
+      font-size: 12px;
+    }
+
+    .risk-table th {
+      background: var(--mint);
+      color: var(--teal);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: .05em;
+    }
+
+    .risk-high {
+      color: #8B3D3D;
+      font-weight: 900;
+    }
+
+    .risk-medium {
+      color: #7b6223;
+      font-weight: 900;
+    }
+
+    .risk-low {
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .escalation {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 10px;
+    }
+
+    .escalation-step {
+      min-height: 145px;
+      padding: 18px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .escalation-step strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+
+    .kill-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 13px;
+    }
+
+    .kill-card {
+      min-height: 190px;
+      padding: 21px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+      border-top: 5px solid #8B3D3D;
+    }
+
+    .kill-card strong {
+      display: block;
+      color: #8B3D3D;
+      margin-bottom: 7px;
+    }
+
+    .decision-boundary {
+      display: grid;
+      grid-template-columns: 1fr 90px 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .boundary-card {
+      padding: 27px;
+      border-radius: 23px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .boundary-card.wenergy {
+      border-top: 5px solid var(--forest);
+    }
+
+    .boundary-card.external {
+      border-top: 5px solid var(--gold);
+    }
+
+    .boundary-arrow {
+      display: grid;
+      place-items: center;
+      font-size: 31px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .governance-kpis {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .gov-kpi {
+      min-height: 175px;
+      padding: 21px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+    }
+
+    .gov-kpi strong {
+      display: block;
+      color: var(--forest);
+      font-size: 26px;
+      margin-bottom: 7px;
+    }
+
+    @media (max-width: 1050px) {
+
+      .principle-grid,
+      .data-governance-grid,
+      .security-grid,
+      .kill-grid,
+      .governance-kpis {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .evidence-stack {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .escalation {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .neutrality-flow,
+      .ai-grid,
+      .decision-boundary {
+        grid-template-columns: 1fr;
+      }
+
+      .neutrality-centre,
+      .boundary-arrow {
+        padding: 8px 0;
+      }
+
+    }
+
+    @media (max-width: 680px) {
+
+      .principle-grid,
+      .data-governance-grid,
+      .security-grid,
+      .kill-grid,
+      .governance-kpis,
+      .evidence-stack,
+      .escalation {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a href="01_problem.html">01 Problem</a>
+      <a href="02_solution.html">02 Solution</a>
+      <a href="03_market.html">03 Market</a>
+      <a href="04_competition.html">04 Competition</a>
+      <a href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a href="08_environmental_impact.html">08 Environment</a>
+      <a href="09_social_impact.html">09 Social</a>
+      <a href="10_low_data_scalability.html">10 Scale</a>
+      <a class="active" href="11_governance_risk.html">11 Governance</a>
+      <a href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero gov-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Governance & Risk
+    </div>
+
+    <div class="section-kicker">
+      Chapter 11 / 12
+    </div>
+
+    <h1>
+      Decision intelligence only creates value
+      <span style="color:var(--forest)">
+        if users can trust how the decision was formed.
+      </span>
+    </h1>
+
+    <p class="lead">
+      Wenergy's governance model is built around explicit evidence provenance,
+      commercial neutrality, visible uncertainty, professional role boundaries,
+      secure handling of information and clear escalation when confidence is insufficient.
+    </p>
+
+    <div class="actions">
+      <span class="tag">Neutrality</span>
+      <span class="tag">Evidence Governance</span>
+      <span class="tag">Privacy</span>
+      <span class="tag">AI Boundaries</span>
+      <span class="tag">Risk Controls</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Governance Principles
+      </div>
+
+      <h2>
+        Five rules protect the integrity of the platform.
+      </h2>
+    </div>
+
+    <div class="principle-grid">
+
+      <article class="principle-card">
+        <span class="tag">01</span>
+        <strong>Evidence Before Assertion</strong>
+        Important claims should retain source, date, evidence class and uncertainty.
+      </article>
+
+      <article class="principle-card">
+        <span class="tag">02</span>
+        <strong>Commercial Neutrality</strong>
+        Payment must not buy technical priority.
+      </article>
+
+      <article class="principle-card">
+        <span class="tag">03</span>
+        <strong>Professional Boundaries</strong>
+        Screening does not replace feasibility, permitting or engineering.
+      </article>
+
+      <article class="principle-card">
+        <span class="tag">04</span>
+        <strong>Human Accountability</strong>
+        High-stakes progression requires human and professional review.
+      </article>
+
+      <article class="principle-card">
+        <span class="tag">05</span>
+        <strong>Visible Uncertainty</strong>
+        Missing data must reduce confidence instead of generating artificial precision.
+      </article>
+
+      <article class="principle-card">
+        <span class="tag">06</span>
+        <strong>Data Minimisation</strong>
+        Collect only information required for the legitimate product purpose.
+      </article>
+
+      <article class="principle-card">
+        <span class="tag">07</span>
+        <strong>Auditability</strong>
+        Priority outputs should be reconstructable from their evidence and rules.
+      </article>
+
+      <article class="principle-card">
+        <span class="tag">08</span>
+        <strong>Correction</strong>
+        Actor or expert evidence can improve Project Lenses over time.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Commercial Neutrality
+      </div>
+
+      <h2>
+        Access can be monetised.
+        Evidence cannot be bought.
+      </h2>
+    </div>
+
+    <div class="neutrality-flow">
+
+      <article class="neutrality-card allowed">
+
+        <span class="tag">Allowed</span>
+
+        <h3>Customers may pay for capabilities.</h3>
+
+        <ul>
+          <li>licence access;</li>
+          <li>additional users;</li>
+          <li>territorial coverage;</li>
+          <li>advanced modules;</li>
+          <li>support;</li>
+          <li>integration services.</li>
+        </ul>
+
+      </article>
+
+      <div class="neutrality-centre">
+
+        <div class="neutrality-circle">
+          COMMERCIAL
+          FIREWALL
+        </div>
+
+      </div>
+
+      <article class="neutrality-card blocked">
+
+        <span class="tag"
+              style="background:rgba(139,61,61,.09);color:#8B3D3D">
+          Prohibited
+        </span>
+
+        <h3>Customers must not pay to alter technical truth.</h3>
+
+        <ul>
+          <li>boost a technology;</li>
+          <li>promote a supplier;</li>
+          <li>hide a constraint;</li>
+          <li>change evidence class;</li>
+          <li>fabricate certainty;</li>
+          <li>suppress conflicting data.</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+    <div class="callout" style="margin-top:24px">
+      PAYMENT MAY PURCHASE ACCESS TO CAPABILITIES.
+      PAYMENT MUST NOT PURCHASE TECHNICAL PRIORITY.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Evidence Governance
+      </div>
+
+      <h2>
+        Every material input needs a status.
+      </h2>
+    </div>
+
+    <div class="evidence-stack">
+
+      <article class="evidence-card">
+        <strong>OBSERVED</strong>
+        Directly supported by source evidence.
+      </article>
+
+      <article class="evidence-card">
+        <strong>ESTIMATED</strong>
+        Calculated using transparent methodology.
+      </article>
+
+      <article class="evidence-card">
+        <strong>INFERRED</strong>
+        Derived relationship or classification.
+      </article>
+
+      <article class="evidence-card">
+        <strong>ACTOR-CONFIRMED</strong>
+        Confirmed by relevant local actor.
+      </article>
+
+      <article class="evidence-card">
+        <strong>EXPERT-VALIDATED</strong>
+        Reviewed by qualified professional.
+      </article>
+
+      <article class="evidence-card">
+        <strong>ASSUMED</strong>
+        Explicit planning assumption.
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:20px">
+      AN OUTPUT SHOULD NEVER LOOK MORE CERTAIN THAN ITS UNDERLYING EVIDENCE.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Data Governance
+      </div>
+
+      <h2>
+        Public data does not eliminate governance responsibility.
+      </h2>
+    </div>
+
+    <div class="data-governance-grid">
+
+      <article class="data-card">
+        <strong>Purpose Limitation</strong>
+        Use information only for defined territorial energy-intelligence purposes.
+      </article>
+
+      <article class="data-card">
+        <strong>Data Minimisation</strong>
+        Avoid collecting unnecessary personal or sensitive information.
+      </article>
+
+      <article class="data-card">
+        <strong>Provenance</strong>
+        Preserve source, retrieval date and transformation history.
+      </article>
+
+      <article class="data-card">
+        <strong>Freshness</strong>
+        Track whether important datasets are stale or current.
+      </article>
+
+      <article class="data-card">
+        <strong>Correction</strong>
+        Support updates when actors or experts identify errors.
+      </article>
+
+      <article class="data-card">
+        <strong>Role-Based Access</strong>
+        Not every user needs every data layer.
+      </article>
+
+      <article class="data-card">
+        <strong>Retention</strong>
+        Define how long private or operational data should remain.
+      </article>
+
+      <article class="data-card">
+        <strong>Export / Portability</strong>
+        Public buyers should retain usable project evidence.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        AI Governance
+      </div>
+
+      <h2>
+        AI can assist explanation.
+        It must not become the source of truth.
+      </h2>
+    </div>
+
+    <div class="ai-grid">
+
+      <article class="ai-card good">
+
+        <span class="tag">Appropriate</span>
+
+        <h3>Assist the evidence workflow</h3>
+
+        <div class="ai-item">
+          Extract structured fields from documents.
+        </div>
+
+        <div class="ai-item">
+          Summarise or translate source material.
+        </div>
+
+        <div class="ai-item">
+          Explain Project Lenses in accessible language.
+        </div>
+
+        <div class="ai-item">
+          Categorise evidence for human review.
+        </div>
+
+        <div class="ai-item">
+          Suggest missing validation questions.
+        </div>
+
+      </article>
+
+      <article class="ai-card bad">
+
+        <span class="tag"
+              style="background:rgba(139,61,61,.09);color:#8B3D3D">
+          Not Acceptable
+        </span>
+
+        <h3>Do not let AI manufacture evidence</h3>
+
+        <div class="ai-item">
+          Invent consumption or production values.
+        </div>
+
+        <div class="ai-item">
+          Fabricate stakeholder willingness.
+        </div>
+
+        <div class="ai-item">
+          Convert assumptions into observed facts.
+        </div>
+
+        <div class="ai-item">
+          Override professional validation.
+        </div>
+
+        <div class="ai-item">
+          Hide conflicting or missing evidence.
+        </div>
+
+      </article>
+
+    </div>
+
+    <div class="callout" style="margin-top:24px">
+      LLM OUTPUT ≠ OBSERVED FACT
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Security Posture
+      </div>
+
+      <h2>
+        Start simple — but design for institutional trust.
+      </h2>
+    </div>
+
+    <div class="security-grid">
+
+      <article class="security-card">
+        <strong>Secrets Management</strong>
+        No API keys, passwords or private credentials in public repositories.
+      </article>
+
+      <article class="security-card">
+        <strong>Least Privilege</strong>
+        Restrict administrative and sensitive functions by role.
+      </article>
+
+      <article class="security-card">
+        <strong>Dependency Hygiene</strong>
+        Track and patch vulnerable software dependencies.
+      </article>
+
+      <article class="security-card">
+        <strong>Secure Configuration</strong>
+        Separate local/development settings from production configuration.
+      </article>
+
+      <article class="security-card">
+        <strong>Audit Logs</strong>
+        Future production deployments should record important changes.
+      </article>
+
+      <article class="security-card">
+        <strong>Backups</strong>
+        Protect project evidence and configuration from accidental loss.
+      </article>
+
+      <article class="security-card">
+        <strong>Data Segregation</strong>
+        Keep private customer information separated from public evidence.
+      </article>
+
+      <article class="security-card">
+        <strong>Incident Process</strong>
+        Define response and notification procedures before scale.
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      These controls describe the intended production governance direction.
+      The current public POC should not be represented as a certified production security environment.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Role Boundary
+      </div>
+
+      <h2>
+        Wenergy informs the decision.
+        It does not own every decision.
+      </h2>
+    </div>
+
+    <div class="decision-boundary">
+
+      <article class="boundary-card wenergy">
+
+        <span class="tag">Wenergy</span>
+
+        <h3>Orient & Connect</h3>
+
+        <ul>
+          <li>screen opportunities;</li>
+          <li>structure evidence;</li>
+          <li>show uncertainty;</li>
+          <li>connect actors;</li>
+          <li>prioritise investigation;</li>
+          <li>define next action.</li>
+        </ul>
+
+      </article>
+
+      <div class="boundary-arrow">
+        →
+      </div>
+
+      <article class="boundary-card external">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          Qualified Actors
+        </span>
+
+        <h3>Validate & Implement</h3>
+
+        <ul>
+          <li>professional feasibility;</li>
+          <li>engineering;</li>
+          <li>permitting;</li>
+          <li>financing;</li>
+          <li>procurement;</li>
+          <li>construction and operation.</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:20px">
+      ORIENT AND CONNECT — NOT REPLACE.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Risk Register
+      </div>
+
+      <h2>
+        The strongest risks are product, market and trust risks — not only technical risks.
+      </h2>
+    </div>
+
+    <div class="risk-table-wrap">
+
+      <table class="risk-table">
+
+        <thead>
+          <tr>
+            <th>Risk</th>
+            <th>Probability</th>
+            <th>Impact</th>
+            <th>Mitigation</th>
+            <th>Evidence Gate</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Customers do not find sufficient incremental value</td>
+            <td class="risk-high">High</td>
+            <td class="risk-high">High</td>
+            <td>Paid pilot with explicit usefulness and decision-change KPIs.</td>
+            <td>Do not scale GTM without pilot proof.</td>
+          </tr>
+
+          <tr>
+            <td>Public tools close the white space</td>
+            <td class="risk-medium">Medium</td>
+            <td class="risk-high">High</td>
+            <td>Integrate public tools and focus on workflow/orchestration rather than duplicate features.</td>
+            <td>Reassess differentiation annually.</td>
+          </tr>
+
+          <tr>
+            <td>Territory onboarding remains too bespoke</td>
+            <td class="risk-high">High</td>
+            <td class="risk-high">High</td>
+            <td>Adapter architecture + second-territory reuse target.</td>
+            <td>≥70% workflow reuse target.</td>
+          </tr>
+
+          <tr>
+            <td>Screening errors undermine trust</td>
+            <td class="risk-medium">Medium</td>
+            <td class="risk-high">High</td>
+            <td>Evidence classes, provenance, review and clear screening boundary.</td>
+            <td>≥90% traceability target.</td>
+          </tr>
+
+          <tr>
+            <td>False precision in low-data environments</td>
+            <td class="risk-medium">Medium</td>
+            <td class="risk-high">High</td>
+            <td>Confidence degradation, ranges and explicit data-gap Lens.</td>
+            <td>No unsupported observed claim.</td>
+          </tr>
+
+          <tr>
+            <td>AI hallucination affects project evidence</td>
+            <td class="risk-medium">Medium</td>
+            <td class="risk-high">High</td>
+            <td>LLM never treated as observed source; deterministic-first architecture.</td>
+            <td>Human review before high-stakes use.</td>
+          </tr>
+
+          <tr>
+            <td>Public procurement cycle exceeds runway</td>
+            <td class="risk-high">High</td>
+            <td class="risk-high">High</td>
+            <td>Lean staffing, paid pilot entry and partner-channel GTM.</td>
+            <td>Track sales-cycle evidence before hiring.</td>
+          </tr>
+
+          <tr>
+            <td>Commercial influence damages neutrality</td>
+            <td class="risk-low">Low</td>
+            <td class="risk-high">High</td>
+            <td>Technical-priority firewall and transparent scoring/evidence rules.</td>
+            <td>No pay-to-rank model.</td>
+          </tr>
+
+          <tr>
+            <td>Private data leaks into public repository</td>
+            <td class="risk-medium">Medium</td>
+            <td class="risk-high">High</td>
+            <td>Publication audit, separate public demo data and secret scanning.</td>
+            <td>Zero secrets before release.</td>
+          </tr>
+
+          <tr>
+            <td>Founder dependence remains too high</td>
+            <td class="risk-high">High</td>
+            <td class="risk-medium">Medium</td>
+            <td>Document workflows, adapters, methodology and repeatable onboarding.</td>
+            <td>Delivery-hour decline by territory.</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Escalation Model
+      </div>
+
+      <h2>
+        When confidence falls, the workflow should slow down — not pretend harder.
+      </h2>
+    </div>
+
+    <div class="escalation">
+
+      <article class="escalation-step">
+        <strong>1 — Detect</strong>
+        Evidence gap, conflict or low-confidence condition.
+      </article>
+
+      <article class="escalation-step">
+        <strong>2 — Flag</strong>
+        Make the uncertainty visible in the Project Lens.
+      </article>
+
+      <article class="escalation-step">
+        <strong>3 — Collect</strong>
+        Request local or authoritative evidence.
+      </article>
+
+      <article class="escalation-step">
+        <strong>4 — Review</strong>
+        Human / professional validation if needed.
+      </article>
+
+      <article class="escalation-step">
+        <strong>5 — Update</strong>
+        Recalculate confidence and next action.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Kill Criteria
+      </div>
+
+      <h2>
+        Governance also means knowing when not to proceed.
+      </h2>
+    </div>
+
+    <div class="kill-grid">
+
+      <article class="kill-card">
+        <strong>No Customer Value</strong>
+        Pilot users do not find the workflow materially useful.
+      </article>
+
+      <article class="kill-card">
+        <strong>No Willingness to Pay</strong>
+        Public buyers consistently value the product below sustainable delivery cost.
+      </article>
+
+      <article class="kill-card">
+        <strong>No Replication</strong>
+        Every territory requires a bespoke rebuild.
+      </article>
+
+      <article class="kill-card">
+        <strong>No Defensible Boundary</strong>
+        Existing free tools and professional services solve the problem sufficiently.
+      </article>
+
+      <article class="kill-card">
+        <strong>Unmanageable Data Risk</strong>
+        The product cannot maintain acceptable evidence quality or privacy.
+      </article>
+
+      <article class="kill-card">
+        <strong>Neutrality Compromised</strong>
+        Commercial incentives require pay-to-rank behaviour.
+      </article>
+
+      <article class="kill-card">
+        <strong>AI Becomes Source of Truth</strong>
+        The system cannot maintain evidence-grounded outputs.
+      </article>
+
+      <article class="kill-card">
+        <strong>Unsustainable Delivery</strong>
+        Services effort prevents a scalable software model.
+      </article>
+
+    </div>
+
+    <div class="callout" style="margin-top:24px">
+      A STRONG GOVERNANCE MODEL MUST ALLOW WENERGY TO SAY:
+      “THIS SHOULD NOT PROCEED.”
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Governance KPIs
+      </div>
+
+      <h2>
+        Trust should be measurable.
+      </h2>
+    </div>
+
+    <div class="governance-kpis">
+
+      <article class="gov-kpi">
+        <strong>≥90%</strong>
+        Priority-output evidence traceability target.
+      </article>
+
+      <article class="gov-kpi">
+        <strong>100%</strong>
+        Priority Project Lenses with evidence class.
+      </article>
+
+      <article class="gov-kpi">
+        <strong>0</strong>
+        Pay-to-rank pathways tolerated.
+      </article>
+
+      <article class="gov-kpi">
+        <strong>0</strong>
+        Secrets allowed in public repositories.
+      </article>
+
+      <article class="gov-kpi">
+        <strong>100%</strong>
+        High-risk AI outputs subject to review.
+      </article>
+
+      <article class="gov-kpi">
+        <strong>Tracked</strong>
+        Data freshness for material sources.
+      </article>
+
+      <article class="gov-kpi">
+        <strong>Tracked</strong>
+        Corrections and evidence updates.
+      </article>
+
+      <article class="gov-kpi">
+        <strong>Explicit</strong>
+        Role boundary for every maturity stage.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="callout">
+
+      TRUST IS PART OF THE PRODUCT.
+
+      <small style="font-size:18px;opacity:1;margin-top:15px">
+        Wenergy's value depends not only on surfacing promising opportunities,
+        but on making it clear what is known, what is uncertain, who validated it,
+        what Wenergy is responsible for and where qualified professionals must take over.
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="10_low_data_scalability.html">
+        ← 10 — Low-Data Scalability
+      </a>
+
+      <a href="12_roadmap.html">
+        12 — Roadmap & Vision →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+      <strong>CONNECT • MATCH • ACT</strong><br>
+      Governance and security controls shown here include both current product
+      principles and intended production requirements. The current Wenergy POC
+      is not presented as a certified production environment.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

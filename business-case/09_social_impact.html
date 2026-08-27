@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy social impact — inclusive territorial energy access, community empowerment, small-commune inclusion, public value and local decision capacity.">
+
+  <title>09 — Social Impact | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .social-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-hero::after {
+      content: "";
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      left: -320px;
+      top: -360px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(46,204,113,.16),
+          rgba(46,204,113,.035) 46%,
+          transparent 72%);
+      pointer-events: none;
+    }
+
+    .social-thesis {
+      display: grid;
+      grid-template-columns: 1fr 130px 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .thesis-card {
+      padding: 29px;
+      border-radius: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .thesis-card.problem {
+      border-top: 5px solid var(--gold);
+    }
+
+    .thesis-card.response {
+      border-top: 5px solid var(--forest);
+    }
+
+    .thesis-centre {
+      display: grid;
+      place-items: center;
+    }
+
+    .thesis-circle {
+      width: 110px;
+      height: 110px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 900;
+      box-shadow: 0 0 0 12px rgba(13,59,59,.07);
+    }
+
+    .impact-chain {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 9px;
+      align-items: stretch;
+    }
+
+    .impact-step {
+      min-height: 155px;
+      border-radius: 17px;
+      padding: 17px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .impact-step strong {
+      display: block;
+      color: var(--teal);
+      margin: 9px 0 6px;
+    }
+
+    .impact-num {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .access-model {
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr 70px 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .access-card {
+      min-height: 220px;
+      padding: 23px;
+      border-radius: 21px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .access-card.buyer {
+      border-top: 5px solid var(--forest);
+    }
+
+    .access-card.platform {
+      border-top: 5px solid var(--gold);
+    }
+
+    .access-card.community {
+      border-top: 5px solid var(--teal);
+    }
+
+    .access-arrow {
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      font-size: 29px;
+      font-weight: 900;
+    }
+
+    .population-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .population-card {
+      padding: 22px;
+      border-radius: 19px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+    }
+
+    .population-card strong {
+      display: block;
+      font-size: 31px;
+      color: var(--forest);
+      margin-bottom: 6px;
+      letter-spacing: -.04em;
+    }
+
+    .population-card span {
+      color: var(--grey);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .small-commune-grid {
+      display: grid;
+      grid-template-columns: 1fr 90px 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .commune-card {
+      padding: 26px;
+      border-radius: 23px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .commune-card.challenge {
+      border-left: 5px solid var(--gold);
+    }
+
+    .commune-card.shared {
+      border-left: 5px solid var(--forest);
+    }
+
+    .commune-arrow {
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .mode-card {
+      padding: 27px;
+      border-radius: 24px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .mode-card.simple {
+      border-top: 5px solid var(--forest);
+    }
+
+    .mode-card.expert {
+      border-top: 5px solid var(--teal);
+    }
+
+    .mode-divider {
+      display: grid;
+      place-items: center;
+      color: var(--forest);
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .mode-row {
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mode-row:last-child {
+      border-bottom: 0;
+    }
+
+    .mode-row strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+
+    .actor-loop {
+      display: grid;
+      grid-template-columns: repeat(7,1fr);
+      gap: 8px;
+      align-items: stretch;
+    }
+
+    .actor-step {
+      min-height: 145px;
+      border-radius: 16px;
+      padding: 16px;
+      background: white;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .actor-step strong {
+      color: var(--teal);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .actor-step.highlight {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+
+    .actor-step.highlight strong {
+      color: white;
+    }
+
+    .stakeholder-grid {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 12px;
+    }
+
+    .stakeholder-card {
+      min-height: 180px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+    }
+
+    .stakeholder-card strong {
+      color: var(--forest);
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .equity-grid {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 12px;
+    }
+
+    .equity-card {
+      padding: 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+      min-height: 180px;
+    }
+
+    .equity-card strong {
+      display: block;
+      color: var(--teal);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .distribution-board {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 11px;
+    }
+
+    .distribution {
+      min-height: 140px;
+      padding: 18px;
+      border-radius: 17px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .distribution strong {
+      color: var(--forest);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .digital-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .digital-card {
+      padding: 21px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+      min-height: 170px;
+    }
+
+    .digital-card strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 7px;
+    }
+
+    .social-maturity {
+      display: grid;
+      grid-template-columns: repeat(7,1fr);
+      gap: 7px;
+    }
+
+    .social-stage {
+      min-height: 140px;
+      border-radius: 15px;
+      padding: 15px 11px;
+      text-align: center;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .social-stage.current {
+      background: rgba(46,204,113,.13);
+    }
+
+    .social-stage.outcome {
+      background: var(--teal);
+      color: white;
+    }
+
+    .social-code {
+      display: block;
+      font-weight: 900;
+      color: var(--forest);
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+
+    .social-stage.outcome .social-code {
+      color: var(--gold);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .kpi-card {
+      min-height: 175px;
+      padding: 21px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .kpi-card strong {
+      display: block;
+      color: var(--forest);
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .guardrail-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+    }
+
+    .guardrail-card {
+      padding: 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--forest);
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    @media (max-width: 1050px) {
+
+      .impact-chain,
+      .actor-loop,
+      .social-maturity {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .population-grid,
+      .digital-grid,
+      .kpi-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stakeholder-grid,
+      .equity-grid,
+      .distribution-board {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .social-thesis,
+      .access-model,
+      .small-commune-grid,
+      .mode-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .thesis-centre,
+      .access-arrow,
+      .commune-arrow,
+      .mode-divider {
+        padding: 8px 0;
+      }
+
+    }
+
+    @media (max-width: 680px) {
+
+      .impact-chain,
+      .population-grid,
+      .actor-loop,
+      .stakeholder-grid,
+      .equity-grid,
+      .distribution-board,
+      .digital-grid,
+      .social-maturity,
+      .kpi-grid,
+      .guardrail-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a href="01_problem.html">01 Problem</a>
+      <a href="02_solution.html">02 Solution</a>
+      <a href="03_market.html">03 Market</a>
+      <a href="04_competition.html">04 Competition</a>
+      <a href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a href="08_environmental_impact.html">08 Environment</a>
+      <a class="active" href="09_social_impact.html">09 Social</a>
+      <a href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero social-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Social Impact
+    </div>
+
+    <div class="section-kicker">
+      Chapter 09 / 12
+    </div>
+
+    <h1>
+      Energy intelligence should not be reserved
+      <span style="color:var(--forest)">
+        for the territories with the largest teams and budgets.
+      </span>
+    </h1>
+
+    <p class="lead">
+      Wenergy's social mission is to expand territorial energy access,
+      community understanding and local decision capacity while preserving
+      the professional and governance boundaries required for responsible
+      project development.
+    </p>
+
+    <div class="actions">
+      <span class="tag">Territorial Equity</span>
+      <span class="tag">Community Access</span>
+      <span class="tag">Rural Inclusion</span>
+      <span class="tag">Public Value</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="social-thesis">
+
+      <article class="thesis-card problem">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          Social Problem
+        </span>
+
+        <h3>
+          Energy transition information is difficult to use.
+        </h3>
+
+        <p>
+          Local energy intelligence can be spread across:
+        </p>
+
+        <ul>
+          <li>GIS systems;</li>
+          <li>consultant reports;</li>
+          <li>specialist datasets;</li>
+          <li>regulatory platforms;</li>
+          <li>technical studies;</li>
+          <li>institutional knowledge.</li>
+        </ul>
+
+      </article>
+
+      <div class="thesis-centre">
+
+        <div class="thesis-circle">
+          SOCIAL
+          ACCESS
+          GAP
+        </div>
+
+      </div>
+
+      <article class="thesis-card response">
+
+        <span class="tag">
+          Wenergy Response
+        </span>
+
+        <h3>
+          Turn fragmented information into shared territorial intelligence.
+        </h3>
+
+        <p>
+          Make project evidence easier to:
+        </p>
+
+        <ul>
+          <li>understand;</li>
+          <li>compare;</li>
+          <li>challenge;</li>
+          <li>contribute to;</li>
+          <li>connect to action.</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+    <div class="callout callout-light" style="margin-top:24px">
+      MORE ENERGY DATA DOES NOT AUTOMATICALLY CREATE MORE ENERGY ACCESS.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        Social Impact Chain
+      </div>
+
+      <h2>
+        Information becomes valuable when people can use it.
+      </h2>
+
+    </div>
+
+    <div class="impact-chain">
+
+      <article class="impact-step">
+        <span class="impact-num">1</span>
+        <strong>Accessible Information</strong>
+        Evidence is presented in understandable form.
+      </article>
+
+      <article class="impact-step">
+        <span class="impact-num">2</span>
+        <strong>Understanding</strong>
+        Users understand project potential and uncertainty.
+      </article>
+
+      <article class="impact-step">
+        <span class="impact-num">3</span>
+        <strong>Participation</strong>
+        Relevant actors can contribute evidence.
+      </article>
+
+      <article class="impact-step">
+        <span class="impact-num">4</span>
+        <strong>Connection</strong>
+        Projects connect to actors and professionals.
+      </article>
+
+      <article class="impact-step">
+        <span class="impact-num">5</span>
+        <strong>Decision Capacity</strong>
+        Territories make stronger choices.
+      </article>
+
+      <article class="impact-step">
+        <span class="impact-num">6</span>
+        <strong>Community Benefit</strong>
+        Implemented projects can create local value.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        Initial Reach
+      </div>
+
+      <h2>
+        The Foix reference territory already represents a community-scale use case.
+      </h2>
+
+    </div>
+
+    <div class="population-grid">
+
+      <article class="population-card">
+        <strong>33,679</strong>
+        <span>Residents</span>
+      </article>
+
+      <article class="population-card">
+        <strong>42</strong>
+        <span>Communes</span>
+      </article>
+
+      <article class="population-card">
+        <strong>24.0%</strong>
+        <span>Foix Poverty Rate</span>
+      </article>
+
+      <article class="population-card">
+        <strong>16.1%</strong>
+        <span>EPCI Poverty Rate</span>
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      Poverty and income context supports the need to consider affordability
+      and distributional value. It does not mean Wenergy currently reduces poverty.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        B2G2C Access Model
+      </div>
+
+      <h2>
+        Core territorial access should not depend on individual ability to pay.
+      </h2>
+
+    </div>
+
+    <div class="access-model">
+
+      <article class="access-card buyer">
+
+        <span class="tag">Funds</span>
+
+        <h3>Territorial Public Buyer</h3>
+
+        <p>
+          EPCI, energy syndicate or similar public organisation funds the shared
+          territorial capability.
+        </p>
+
+      </article>
+
+      <div class="access-arrow">
+        →
+      </div>
+
+      <article class="access-card platform">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          Shared Infrastructure
+        </span>
+
+        <h3>Wenergy Platform</h3>
+
+        <p>
+          Shared Project Lenses, evidence, project maturity, professional workflow
+          and community-facing explanations.
+        </p>
+
+      </article>
+
+      <div class="access-arrow">
+        →
+      </div>
+
+      <article class="access-card community">
+
+        <span class="tag">Accesses</span>
+
+        <h3>Territory & Community</h3>
+
+        <p>
+          Communes, businesses, farmers, professionals and residents can access
+          relevant layers according to their role.
+        </p>
+
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:22px">
+      PREMIUM FEATURES MUST NOT UNDERMINE EQUITABLE ACCESS TO CORE PUBLIC / COMMUNITY INFORMATION.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        Small-Commune Inclusion
+      </div>
+
+      <h2>
+        Shared territorial infrastructure can reduce capability inequality.
+      </h2>
+
+    </div>
+
+    <div class="small-commune-grid">
+
+      <article class="commune-card challenge">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          Typical Constraint
+        </span>
+
+        <h3>
+          Small commune
+        </h3>
+
+        <p>
+          May lack:
+        </p>
+
+        <ul>
+          <li>dedicated energy staff;</li>
+          <li>GIS specialists;</li>
+          <li>internal engineering;</li>
+          <li>procurement capacity;</li>
+          <li>continuous project intelligence.</li>
+        </ul>
+
+      </article>
+
+      <div class="commune-arrow">
+        →
+      </div>
+
+      <article class="commune-card shared">
+
+        <span class="tag">
+          Shared Capacity
+        </span>
+
+        <h3>
+          Territorial access
+        </h3>
+
+        <p>
+          A larger EPCI or syndicate can fund infrastructure that becomes usable
+          across smaller member communes.
+        </p>
+
+        <div class="callout callout-light"
+             style="font-size:18px;margin-top:16px;padding:18px">
+          TERRITORY PAYS → SMALL COMMUNE GAINS ACCESS
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Accessible Without Diluting Evidence
+      </div>
+
+      <h2>
+        One evidence base. Different depths of explanation.
+      </h2>
+    </div>
+
+    <div class="mode-grid">
+
+      <article class="mode-card simple">
+
+        <span class="tag">Simple Mode</span>
+
+        <h3>
+          Understand the project
+        </h3>
+
+        <div class="mode-row">
+          <strong>What is it?</strong>
+          Human-readable project explanation.
+        </div>
+
+        <div class="mode-row">
+          <strong>Why might it matter?</strong>
+          Local relevance and possible benefits.
+        </div>
+
+        <div class="mode-row">
+          <strong>What is known?</strong>
+          Evidence explained clearly.
+        </div>
+
+        <div class="mode-row">
+          <strong>What remains uncertain?</strong>
+          Confidence remains visible.
+        </div>
+
+        <div class="mode-row">
+          <strong>What happens next?</strong>
+          Project maturity and next action.
+        </div>
+
+      </article>
+
+      <div class="mode-divider">
+        ↔
+      </div>
+
+      <article class="mode-card expert">
+
+        <span class="tag">Expert Mode</span>
+
+        <h3>
+          Challenge the project
+        </h3>
+
+        <div class="mode-row">
+          <strong>Source provenance</strong>
+          Evidence source and date.
+        </div>
+
+        <div class="mode-row">
+          <strong>Methodology</strong>
+          Matching logic and calculations.
+        </div>
+
+        <div class="mode-row">
+          <strong>Constraints</strong>
+          Planning/environmental context.
+        </div>
+
+        <div class="mode-row">
+          <strong>Data gaps</strong>
+          Missing evidence and uncertainty.
+        </div>
+
+        <div class="mode-row">
+          <strong>Professional handoff</strong>
+          Questions for deeper feasibility.
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        Local Evidence Loop
+      </div>
+
+      <h2>
+        Participation can improve the evidence itself.
+      </h2>
+
+      <p>
+        Community participation becomes more meaningful when local knowledge can
+        improve the Project Lens rather than existing only as a consultation statistic.
+      </p>
+
+    </div>
+
+    <div class="actor-loop">
+
+      <article class="actor-step">
+        <strong>Data Gap</strong>
+        Wenergy identifies missing evidence.
+      </article>
+
+      <article class="actor-step">
+        <strong>Relevant Actor</strong>
+        Farmer, facility, business or commune identified.
+      </article>
+
+      <article class="actor-step highlight">
+        <strong>Local Contribution</strong>
+        Actor provides evidence.
+      </article>
+
+      <article class="actor-step">
+        <strong>Evidence Update</strong>
+        Status becomes actor-confirmed.
+      </article>
+
+      <article class="actor-step">
+        <strong>Lens Update</strong>
+        Project information improves.
+      </article>
+
+      <article class="actor-step">
+        <strong>Confidence</strong>
+        Uncertainty can decrease.
+      </article>
+
+      <article class="actor-step">
+        <strong>Action</strong>
+        Better next step becomes possible.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        Who Can Contribute?
+      </div>
+
+      <h2>
+        Different actors hold different pieces of territorial knowledge.
+      </h2>
+
+    </div>
+
+    <div class="stakeholder-grid">
+
+      <article class="stakeholder-card">
+        <strong>Residents</strong>
+        Local project interest, observations and community context.
+      </article>
+
+      <article class="stakeholder-card">
+        <strong>Farmers</strong>
+        Feedstock, residues, land context and participation evidence.
+      </article>
+
+      <article class="stakeholder-card">
+        <strong>Businesses</strong>
+        Demand, waste heat, operational schedules and site information.
+      </article>
+
+      <article class="stakeholder-card">
+        <strong>Communes</strong>
+        Building, planning and local priority context.
+      </article>
+
+      <article class="stakeholder-card">
+        <strong>Experts</strong>
+        Technical review, feasibility evidence and professional validation.
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:20px">
+      LOCAL INTEREST MAY INFORM GOVERNANCE — IT MUST NOT OVERRIDE TECHNICAL EVIDENCE.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-kicker">
+        Distributional Equity
+      </div>
+
+      <h2>
+        A successful project is not automatically an equitable project.
+      </h2>
+
+      <p>
+        Wenergy's future Community Benefit Lens should help territories ask how
+        costs, ownership, risk and benefits are distributed.
+      </p>
+
+    </div>
+
+    <div class="equity-grid">
+
+      <article class="equity-card">
+        <strong>Who Pays?</strong>
+        Public authority, business, household or investor?
+      </article>
+
+      <article class="equity-card">
+        <strong>Who Saves?</strong>
+        Which users experience cost reductions?
+      </article>
+
+      <article class="equity-card">
+        <strong>Who Owns?</strong>
+        Who captures long-term asset value?
+      </article>
+
+      <article class="equity-card">
+        <strong>Who Bears Risk?</strong>
+        Financial, planning, operational or social risk?
+      </article>
+
+      <article class="equity-card">
+        <strong>Who Participates?</strong>
+        Are relevant groups able to understand and engage?
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Community Benefit Lens
+      </div>
+
+      <h2>
+        Social value can become part of project comparison.
+      </h2>
+    </div>
+
+    <div class="distribution-board">
+
+      <article class="distribution">
+        <strong>Beneficiaries</strong>
+        Which groups receive value?
+      </article>
+
+      <article class="distribution">
+        <strong>Affordability</strong>
+        Does the project improve access or cost?
+      </article>
+
+      <article class="distribution">
+        <strong>Local Ownership</strong>
+        Is local ownership relevant or possible?
+      </article>
+
+      <article class="distribution">
+        <strong>Geographic Equity</strong>
+        Which communes receive investment?
+      </article>
+
+      <article class="distribution">
+        <strong>Engagement Need</strong>
+        What level of participation is appropriate?
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Digital Inclusion
+      </div>
+
+      <h2>
+        Digital access should not become a new barrier.
+      </h2>
+    </div>
+
+    <div class="digital-grid">
+
+      <article class="digital-card">
+        <strong>Mobile Usability</strong>
+        Community-facing access should work on ordinary devices.
+      </article>
+
+      <article class="digital-card">
+        <strong>Clear Language</strong>
+        Avoid unnecessary technical jargon in Simple Mode.
+      </article>
+
+      <article class="digital-card">
+        <strong>Low-Bandwidth Design</strong>
+        Lightweight pages and cached content support weaker connectivity.
+      </article>
+
+      <article class="digital-card">
+        <strong>Multilingual Potential</strong>
+        Translation can support deployment and inclusion across territories.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Institutional Empowerment
+      </div>
+
+      <h2>
+        Social impact also means strengthening the public organisations themselves.
+      </h2>
+
+      <p>
+        A territory that can preserve evidence, compare projects, explain priorities
+        and retain institutional project memory is better equipped to manage the
+        energy transition over time.
+      </p>
+    </div>
+
+    <div class="grid-4">
+
+      <article class="card">
+        <h3>Analyse</h3>
+        Connect fragmented local evidence.
+      </article>
+
+      <article class="card">
+        <h3>Prioritise</h3>
+        Focus limited staff and study budgets.
+      </article>
+
+      <article class="card">
+        <h3>Explain</h3>
+        Make project logic easier to communicate.
+      </article>
+
+      <article class="card">
+        <h3>Remember</h3>
+        Preserve project history beyond individual staff members.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Social Impact Maturity
+      </div>
+
+      <h2>
+        Access comes before measurable social outcomes.
+      </h2>
+    </div>
+
+    <div class="social-maturity">
+
+      <article class="social-stage current">
+        <span class="social-code">S0</span>
+        Intended Community Value
+      </article>
+
+      <article class="social-stage current">
+        <span class="social-code">S1</span>
+        Access Provided
+      </article>
+
+      <article class="social-stage">
+        <span class="social-code">S2</span>
+        Users Understand
+      </article>
+
+      <article class="social-stage">
+        <span class="social-code">S3</span>
+        Users Participate
+      </article>
+
+      <article class="social-stage">
+        <span class="social-code">S4</span>
+        Evidence Changes
+      </article>
+
+      <article class="social-stage">
+        <span class="social-code">S5</span>
+        Implemented Benefit
+      </article>
+
+      <article class="social-stage outcome">
+        <span class="social-code">S6</span>
+        Benefit Measured
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      Current Wenergy social-impact maturity is primarily S0–S1 / pre-pilot.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Future Social KPIs
+      </div>
+
+      <h2>
+        Measure reach, understanding, participation and distribution separately.
+      </h2>
+    </div>
+
+    <div class="kpi-grid">
+
+      <article class="kpi-card">
+        <strong>Population with Access</strong>
+        Territorial reach.
+      </article>
+
+      <article class="kpi-card">
+        <strong>Communes with Access</strong>
+        Geographic inclusion.
+      </article>
+
+      <article class="kpi-card">
+        <strong>Small-Commune Usage</strong>
+        Territorial equity.
+      </article>
+
+      <article class="kpi-card">
+        <strong>Simple-Mode Usage</strong>
+        Accessibility.
+      </article>
+
+      <article class="kpi-card">
+        <strong>Comprehension Score</strong>
+        User understanding.
+      </article>
+
+      <article class="kpi-card">
+        <strong>Actor Contributions</strong>
+        Participation.
+      </article>
+
+      <article class="kpi-card">
+        <strong>Local Beneficiaries</strong>
+        Distribution of value.
+      </article>
+
+      <article class="kpi-card">
+        <strong>Affordability Effect</strong>
+        Downstream social outcome.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Social Guardrails
+      </div>
+
+      <h2>
+        Participation and access must not be overstated.
+      </h2>
+    </div>
+
+    <div class="guardrail-grid">
+
+      <article class="guardrail-card">
+        ACCESS ≠ EMPOWERMENT
+      </article>
+
+      <article class="guardrail-card">
+        PARTICIPATION ≠ CONTROL
+      </article>
+
+      <article class="guardrail-card">
+        INTEREST ≠ TECHNICAL PRIORITY
+      </article>
+
+      <article class="guardrail-card">
+        LOCAL ENERGY ≠ AUTOMATIC AFFORDABILITY
+      </article>
+
+      <article class="guardrail-card">
+        IMPLEMENTATION ≠ EQUITABLE BENEFIT
+      </article>
+
+      <article class="guardrail-card">
+        COMMUNITY POPULARITY ≠ TECHNICAL VALIDITY
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="callout">
+
+      WENERGY'S SOCIAL VALUE IS NOT SIMPLY THAT RESIDENTS CAN VIEW A MAP.
+
+      <small style="font-size:18px;opacity:1;margin-top:15px">
+        It is that more people and smaller territories can become part of the local
+        energy-development process with better information, clearer explanations,
+        visible uncertainty, appropriate participation and stronger connection
+        to professional action.
+      </small>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="callout callout-light">
+
+      BETTER PROJECTS + BROADER ACCESS TO THE DECISIONS THAT CREATE THEM.
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="08_environmental_impact.html">
+        ← 08 — Environmental Impact
+      </a>
+
+      <a href="10_low_data_scalability.html">
+        10 — Low-Data Scalability →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+      <strong>CONNECT • MATCH • ACT</strong><br>
+      Wenergy's current social-impact evidence is primarily pre-pilot.
+      Household savings, poverty reduction, employment and affordability outcomes
+      are potential downstream impacts and are not currently claimed as measured results.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

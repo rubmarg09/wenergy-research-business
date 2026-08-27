@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy competitive landscape, ecosystem positioning, differentiation and defensibility.">
+
+  <title>04 — Competition & White Space | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .competition-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .competition-hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      right: -250px;
+      top: -310px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(46,204,113,.13),
+          rgba(46,204,113,.03) 45%,
+          transparent 72%);
+      pointer-events: none;
+    }
+
+    .eco-strip {
+      display: grid;
+      grid-template-columns: repeat(7,1fr);
+      gap: 12px;
+      margin-top: 28px;
+      align-items: stretch;
+    }
+
+    .eco-logo {
+      min-height: 100px;
+      display: grid;
+      place-items: center;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .eco-logo img {
+      max-width: 105px;
+      max-height: 54px;
+      object-fit: contain;
+    }
+
+    .ecosystem-map {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+    }
+
+    .eco-card {
+      position: relative;
+      min-height: 245px;
+      border-radius: 23px;
+      padding: 25px;
+      background: rgba(255,255,255,.84);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .eco-card::after {
+      content: attr(data-label);
+      position: absolute;
+      right: -5px;
+      bottom: -18px;
+      font-size: 58px;
+      font-weight: 900;
+      color: rgba(30,110,58,.045);
+      letter-spacing: -.06em;
+    }
+
+    .eco-card h3 {
+      margin-bottom: 9px;
+    }
+
+    .positioning {
+      display: grid;
+      grid-template-columns: 1fr 140px 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .position-card {
+      min-height: 320px;
+      border-radius: 26px;
+      padding: 28px;
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .position-card.ecosystem {
+      border-top: 5px solid var(--gold);
+    }
+
+    .position-card.wenergy {
+      border-top: 5px solid var(--forest);
+      background:
+        linear-gradient(145deg,
+          rgba(255,255,255,.96),
+          rgba(221,239,227,.75));
+    }
+
+    .position-centre {
+      display: grid;
+      place-items: center;
+    }
+
+    .position-circle {
+      width: 125px;
+      height: 125px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font-weight: 900;
+      font-size: 12px;
+      padding: 15px;
+      box-shadow: 0 0 0 12px rgba(13,59,59,.07);
+    }
+
+    .matrix-wrap {
+      overflow-x: auto;
+      background: white;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 1050px;
+    }
+
+    .matrix th,
+    .matrix td {
+      padding: 13px 12px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid rgba(13,59,59,.06);
+      font-size: 12px;
+    }
+
+    .matrix th:first-child,
+    .matrix td:first-child {
+      text-align: left;
+      font-weight: 800;
+      min-width: 220px;
+    }
+
+    .matrix th {
+      background: var(--mint);
+      color: var(--teal);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .matrix .wenergy-col {
+      background: rgba(46,204,113,.10);
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .yes {
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .partial {
+      color: #8a6b1f;
+      font-weight: 900;
+    }
+
+    .no {
+      color: #9c9c9c;
+      font-weight: 700;
+    }
+
+    .white-space-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .white-space-card {
+      min-height: 230px;
+      padding: 23px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .white-space-card strong {
+      color: var(--forest);
+      font-size: 18px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .white-space-number {
+      position: absolute;
+      right: 12px;
+      bottom: -8px;
+      font-size: 54px;
+      font-weight: 900;
+      color: rgba(30,110,58,.05);
+    }
+
+    .moat-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 18px;
+    }
+
+    .moat-card {
+      border-radius: 24px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .moat-card.good {
+      border-left: 5px solid var(--forest);
+    }
+
+    .moat-card.bad {
+      border-left: 5px solid var(--gold);
+    }
+
+    .moat-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      margin: 13px 0;
+      align-items: start;
+    }
+
+    .moat-mark {
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--mint);
+      color: var(--forest);
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .threat-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 14px;
+    }
+
+    .threat {
+      min-height: 185px;
+      border-radius: 18px;
+      padding: 21px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid var(--border);
+    }
+
+    .threat-level {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 900;
+      border-radius: 999px;
+      padding: 5px 8px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .threat-high {
+      background: rgba(139,61,61,.10);
+      color: #8B3D3D;
+    }
+
+    .threat-medium {
+      background: rgba(196,157,70,.15);
+      color: #7a611f;
+    }
+
+    .integrate-flow {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 9px;
+      align-items: stretch;
+    }
+
+    .integrate-box {
+      min-height: 120px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 15px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--border);
+      font-weight: 800;
+      color: var(--teal);
+    }
+
+    .integrate-box.wenergy {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+
+    .position-statement {
+      padding: 34px;
+      background:
+        linear-gradient(135deg, var(--teal), #145252);
+      border-radius: 30px;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .position-statement strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 980px) {
+
+      .eco-strip {
+        grid-template-columns: repeat(4,1fr);
+      }
+
+      .ecosystem-map,
+      .white-space-grid,
+      .threat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .positioning {
+        grid-template-columns: 1fr;
+      }
+
+      .position-centre {
+        padding: 8px 0;
+      }
+
+      .integrate-flow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media (max-width: 650px) {
+
+      .eco-strip,
+      .ecosystem-map,
+      .white-space-grid,
+      .moat-grid,
+      .threat-grid,
+      .integrate-flow {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a href="01_problem.html">01 Problem</a>
+      <a href="02_solution.html">02 Solution</a>
+      <a href="03_market.html">03 Market</a>
+      <a class="active" href="04_competition.html">04 Competition</a>
+      <a href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<section class="page-hero competition-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Competition
+    </div>
+
+    <div class="section-kicker">
+      Chapter 04 / 12
+    </div>
+
+    <h1>
+      Wenergy enters a strong ecosystem.
+      <span style="color:var(--forest)">
+        Its opportunity is in the connections between it.
+      </span>
+    </h1>
+
+    <p class="lead">
+      France already has territorial data platforms, specialist energy tools,
+      national datasets, transition-management systems, consultants and public
+      technical institutions. Wenergy does not compete by pretending those
+      capabilities do not exist.
+    </p>
+
+    <div class="actions">
+      <span class="tag">Integrate, Don't Replicate</span>
+      <span class="tag">Vendor Neutral</span>
+      <span class="tag">Cross-Energy</span>
+      <span class="tag">Project-Oriented</span>
+    </div>
+
+    <div class="eco-strip">
+
+      <div class="eco-logo">
+        <img src="../assets/competitors/competitor_terristory_logo.png"
+             alt="TerriSTORY">
+      </div>
+
+      <div class="eco-logo">
+        <img src="../assets/competitors/competitor_enrezo_logo.png"
+             alt="EnRezo">
+      </div>
+
+      <div class="eco-logo">
+        <img src="../assets/competitors/competitor_territoires_transitions_logo.png"
+             alt="Territoires en Transitions">
+      </div>
+
+      <div class="eco-logo">
+        <img src="../assets/competitors/ecosystem_operat_logo.png"
+             alt="OPERAT">
+      </div>
+
+      <div class="eco-logo">
+        <img src="../assets/competitors/ecosystem_enedis_logo.png"
+             alt="Enedis">
+      </div>
+
+      <div class="eco-logo">
+        <img src="../assets/competitors/ecosystem_cerema_logo.png"
+             alt="Cerema">
+      </div>
+
+      <div class="eco-logo">
+        <img src="../assets/competitors/ecosystem_ademe_logo.png"
+             alt="ADEME">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Competitive Reality
+      </div>
+
+      <h2>
+        The market is not empty.
+      </h2>
+
+      <p>
+        Wenergy's thesis is stronger when it acknowledges the real tools,
+        organisations and professional workflows already used by territories.
+      </p>
+    </div>
+
+    <div class="ecosystem-map">
+
+      <article class="eco-card" data-label="DATA">
+        <span class="tag">Data Infrastructure</span>
+        <h3>Enedis • ADEME • public datasets</h3>
+        <p>
+          Authoritative evidence on consumption, generation, environmental context
+          and other territorial variables.
+        </p>
+      </article>
+
+      <article class="eco-card" data-label="GIS">
+        <span class="tag">Territorial Intelligence</span>
+        <h3>TerriSTORY • GIS tools</h3>
+        <p>
+          Territorial visualisation, indicators, scenario exploration and energy
+          context.
+        </p>
+      </article>
+
+      <article class="eco-card" data-label="HEAT">
+        <span class="tag">Specialist Pathway</span>
+        <h3>EnRezo</h3>
+        <p>
+          Strong specialist logic around heat networks and renewable/recoverable
+          heat opportunities.
+        </p>
+      </article>
+
+      <article class="eco-card" data-label="PLAN">
+        <span class="tag">Action Management</span>
+        <h3>Territoires en Transitions</h3>
+        <p>
+          Territorial transition planning, collaboration and action-management
+          infrastructure.
+        </p>
+      </article>
+
+      <article class="eco-card" data-label="EXPERT">
+        <span class="tag">Professional Expertise</span>
+        <h3>ALECs • SDEs • Cerema • BETs</h3>
+        <p>
+          Human expertise, technical validation, engineering and territorial support.
+        </p>
+      </article>
+
+      <article class="eco-card" data-label="BUILD">
+        <span class="tag">Implementation</span>
+        <h3>Developers • ESCOs • installers</h3>
+        <p>
+          Physical project development, construction, financing and operations.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Strategic Position
+      </div>
+
+      <h2>
+        Wenergy sits between territorial evidence and professional action.
+      </h2>
+    </div>
+
+    <div class="positioning">
+
+      <article class="position-card ecosystem">
+
+        <span class="tag">Existing Ecosystem</span>
+
+        <h3>
+          Strong capabilities already exist.
+        </h3>
+
+        <p>
+          Existing tools and experts provide:
+        </p>
+
+        <ul>
+          <li>data;</li>
+          <li>maps;</li>
+          <li>specialist pathway intelligence;</li>
+          <li>transition planning;</li>
+          <li>professional expertise;</li>
+          <li>engineering and implementation.</li>
+        </ul>
+
+      </article>
+
+      <div class="position-centre">
+        <div class="position-circle">
+          CONNECTIVE
+          WHITE
+          SPACE
+        </div>
+      </div>
+
+      <article class="position-card wenergy">
+
+        <span class="tag">Wenergy</span>
+
+        <h3>
+          Shared project-intelligence layer.
+        </h3>
+
+        <p>
+          Wenergy aims to connect those fragmented capabilities through:
+        </p>
+
+        <ul>
+          <li>multi-energy relationships;</li>
+          <li>Project Lenses;</li>
+          <li>evidence provenance;</li>
+          <li>actor context;</li>
+          <li>uncertainty;</li>
+          <li>next-action logic;</li>
+          <li>project memory.</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Capability Matrix
+      </div>
+
+      <h2>
+        Different tools solve different parts of the journey.
+      </h2>
+
+      <p>
+        This matrix is a strategic comparison of broad capability categories,
+        not a claim that every competing product has identical functionality.
+      </p>
+    </div>
+
+    <div class="matrix-wrap">
+
+      <table class="matrix">
+
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>TerriSTORY</th>
+            <th>EnRezo</th>
+            <th>Territoires en Transitions</th>
+            <th>OPERAT / Data</th>
+            <th>Consultants / BETs</th>
+            <th class="wenergy-col">Wenergy</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>Territorial data visibility</td>
+            <td class="yes">Strong</td>
+            <td class="partial">Specialist</td>
+            <td class="partial">Partial</td>
+            <td class="yes">Strong data</td>
+            <td class="partial">Project-specific</td>
+            <td class="wenergy-col">Integrated</td>
+          </tr>
+
+          <tr>
+            <td>Multi-energy screening</td>
+            <td class="partial">Partial</td>
+            <td class="no">Heat-focused</td>
+            <td class="no">Not core</td>
+            <td class="no">No</td>
+            <td class="yes">Possible</td>
+            <td class="wenergy-col">Core</td>
+          </tr>
+
+          <tr>
+            <td>Resource ↔ demand relationships</td>
+            <td class="partial">Partial</td>
+            <td class="yes">Strong for heat</td>
+            <td class="no">Not core</td>
+            <td class="no">No</td>
+            <td class="yes">Yes</td>
+            <td class="wenergy-col">Core</td>
+          </tr>
+
+          <tr>
+            <td>Actor-connected project object</td>
+            <td class="partial">Limited</td>
+            <td class="partial">Pathway context</td>
+            <td class="partial">Action actors</td>
+            <td class="no">No</td>
+            <td class="yes">Human-led</td>
+            <td class="wenergy-col">Project Lens</td>
+          </tr>
+
+          <tr>
+            <td>Evidence taxonomy / uncertainty</td>
+            <td class="partial">Varies</td>
+            <td class="partial">Varies</td>
+            <td class="partial">Varies</td>
+            <td class="partial">Source data</td>
+            <td class="yes">Professional</td>
+            <td class="wenergy-col">Explicit</td>
+          </tr>
+
+          <tr>
+            <td>Professional handoff logic</td>
+            <td class="no">Not core</td>
+            <td class="partial">Possible</td>
+            <td class="partial">Action management</td>
+            <td class="no">No</td>
+            <td class="yes">Core expertise</td>
+            <td class="wenergy-col">Core boundary</td>
+          </tr>
+
+          <tr>
+            <td>Project maturity / memory</td>
+            <td class="partial">Limited</td>
+            <td class="partial">Limited</td>
+            <td class="yes">Strong action tracking</td>
+            <td class="no">No</td>
+            <td class="partial">Project-based</td>
+            <td class="wenergy-col">Designed in</td>
+          </tr>
+
+          <tr>
+            <td>Community simple mode</td>
+            <td class="partial">Possible</td>
+            <td class="partial">Possible</td>
+            <td class="partial">Possible</td>
+            <td class="no">Data-oriented</td>
+            <td class="partial">Depends</td>
+            <td class="wenergy-col">Product goal</td>
+          </tr>
+
+          <tr>
+            <td>Low-data evidence adaptation</td>
+            <td class="no">Not core</td>
+            <td class="no">Not core</td>
+            <td class="no">Not core</td>
+            <td class="no">Data dependent</td>
+            <td class="yes">Human-led</td>
+            <td class="wenergy-col">Roadmap core</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      <strong>Important:</strong>
+      this is a strategic capability map based on publicly visible positioning and
+      the role each tool plays in the ecosystem. It is not a formal product benchmark
+      or claim of exhaustive feature equivalence.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        White Space
+      </div>
+
+      <h2>
+        The proposed gap is not another map.
+      </h2>
+    </div>
+
+    <div class="white-space-grid">
+
+      <article class="white-space-card">
+        <strong>Multi-energy relationships</strong>
+        <p>
+          Compare multiple renewable and recoverable pathways through a common
+          territorial project model.
+        </p>
+        <div class="white-space-number">01</div>
+      </article>
+
+      <article class="white-space-card">
+        <strong>Project Lens</strong>
+        <p>
+          Transform opportunity markers into structured evidence, actor, uncertainty
+          and action objects.
+        </p>
+        <div class="white-space-number">02</div>
+      </article>
+
+      <article class="white-space-card">
+        <strong>Evidence transparency</strong>
+        <p>
+          Keep OBSERVED, ESTIMATED, INFERRED and other evidence classes visible.
+        </p>
+        <div class="white-space-number">03</div>
+      </article>
+
+      <article class="white-space-card">
+        <strong>Actor orchestration</strong>
+        <p>
+          Connect source, demand, public actors and professionals around a shared
+          project object.
+        </p>
+        <div class="white-space-number">04</div>
+      </article>
+
+      <article class="white-space-card">
+        <strong>Action continuity</strong>
+        <p>
+          Preserve next actions, maturity and project memory beyond one-time studies.
+        </p>
+        <div class="white-space-number">05</div>
+      </article>
+
+      <article class="white-space-card">
+        <strong>Evidence-adaptive scale</strong>
+        <p>
+          Reduce confidence transparently when territorial data are incomplete instead
+          of requiring perfect data everywhere.
+        </p>
+        <div class="white-space-number">06</div>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Integrate — Don't Replicate
+      </div>
+
+      <h2>
+        Wenergy becomes stronger by using the ecosystem.
+      </h2>
+    </div>
+
+    <div class="integrate-flow">
+
+      <div class="integrate-box">
+        Public Data
+      </div>
+
+      <div class="integrate-box">
+        Specialist Tools
+      </div>
+
+      <div class="integrate-box wenergy">
+        WENERGY
+        <br>
+        PROJECT INTELLIGENCE
+      </div>
+
+      <div class="integrate-box">
+        Qualified Experts
+      </div>
+
+      <div class="integrate-box">
+        Implementation
+      </div>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:20px">
+      WENERGY SHOULD NOT REBUILD A STRONG PUBLIC TOOL JUST TO CLAIM OWNERSHIP OF THE FEATURE.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Defensibility
+      </div>
+
+      <h2>
+        The moat is not proven yet.
+      </h2>
+
+      <p>
+        At POC stage, Wenergy should not claim defensibility simply because it uses
+        AI, maps or public data.
+      </p>
+    </div>
+
+    <div class="moat-grid">
+
+      <article class="moat-card good">
+
+        <span class="tag">Potential Future Moat</span>
+
+        <h3>
+          What could become defensible
+        </h3>
+
+        <div class="moat-item">
+          <div class="moat-mark">✓</div>
+          <div>
+            <strong>Workflow embedding</strong><br>
+            Becoming part of how territories manage project pipelines.
+          </div>
+        </div>
+
+        <div class="moat-item">
+          <div class="moat-mark">✓</div>
+          <div>
+            <strong>Project Lens standard</strong><br>
+            A repeatable shared object used by territories and professionals.
+          </div>
+        </div>
+
+        <div class="moat-item">
+          <div class="moat-mark">✓</div>
+          <div>
+            <strong>Returned feasibility evidence</strong><br>
+            Learning from real downstream validation and implementation.
+          </div>
+        </div>
+
+        <div class="moat-item">
+          <div class="moat-mark">✓</div>
+          <div>
+            <strong>Territory adapter library</strong><br>
+            Faster deployment as integrations accumulate.
+          </div>
+        </div>
+
+        <div class="moat-item">
+          <div class="moat-mark">✓</div>
+          <div>
+            <strong>Institutional trust</strong><br>
+            References, methodology, transparency and partner relationships.
+          </div>
+        </div>
+
+      </article>
+
+      <article class="moat-card bad">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          Not A Moat
+        </span>
+
+        <h3>
+          What Wenergy should not mistake for defensibility
+        </h3>
+
+        <div class="moat-item">
+          <div class="moat-mark">×</div>
+          <div>
+            <strong>A map</strong><br>
+            Mapping is widely available.
+          </div>
+        </div>
+
+        <div class="moat-item">
+          <div class="moat-mark">×</div>
+          <div>
+            <strong>Public datasets</strong><br>
+            Competitors can access the same evidence.
+          </div>
+        </div>
+
+        <div class="moat-item">
+          <div class="moat-mark">×</div>
+          <div>
+            <strong>AI explanations</strong><br>
+            Generative capabilities are rapidly commoditising.
+          </div>
+        </div>
+
+        <div class="moat-item">
+          <div class="moat-mark">×</div>
+          <div>
+            <strong>A scoring formula</strong><br>
+            Scores alone are easy to reproduce.
+          </div>
+        </div>
+
+        <div class="moat-item">
+          <div class="moat-mark">×</div>
+          <div>
+            <strong>POC opportunity count</strong><br>
+            Volume is not customer lock-in.
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Competitive Threats
+      </div>
+
+      <h2>
+        The strongest threat may be that customers do not need another product.
+      </h2>
+    </div>
+
+    <div class="threat-grid">
+
+      <article class="threat">
+        <span class="threat-level threat-high">High</span>
+        <h3>Public tools expand</h3>
+        <p>
+          Existing platforms may integrate more project-orchestration capability.
+        </p>
+      </article>
+
+      <article class="threat">
+        <span class="threat-level threat-high">High</span>
+        <h3>Free tools are sufficient</h3>
+        <p>
+          The incremental Wenergy value may be too small to justify payment.
+        </p>
+      </article>
+
+      <article class="threat">
+        <span class="threat-level threat-medium">Medium</span>
+        <h3>Consultants productise</h3>
+        <p>
+          Professional firms may build reusable digital screening layers.
+        </p>
+      </article>
+
+      <article class="threat">
+        <span class="threat-level threat-medium">Medium</span>
+        <h3>Internal GIS improves</h3>
+        <p>
+          Larger public authorities may solve the workflow internally.
+        </p>
+      </article>
+
+      <article class="threat">
+        <span class="threat-level threat-medium">Medium</span>
+        <h3>Large energy companies enter</h3>
+        <p>
+          Existing customer access and implementation capacity can create strong
+          bundled offerings.
+        </p>
+      </article>
+
+      <article class="threat">
+        <span class="threat-level threat-high">High</span>
+        <h3>AI commoditisation</h3>
+        <p>
+          Language-generation features alone cannot sustain differentiation.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="position-statement">
+
+      <div class="section-kicker"
+           style="color:#aaf2c5">
+        Wenergy Positioning
+      </div>
+
+      <h2 style="color:white;margin-top:8px">
+        The orchestration layer between fragmented territorial evidence
+        and professional project development.
+      </h2>
+
+      <p style="font-size:19px;max-width:900px">
+
+        Wenergy is testing whether territories will pay for a shared,
+        multi-energy project-intelligence system that connects public evidence,
+        actors and constraints into explainable Project Lenses — then directs the
+        strongest candidates toward qualified professional action.
+
+      </p>
+
+      <p style="margin-bottom:0">
+        <strong>
+          The competitive thesis is promising — but the pilot must prove that
+          this connective layer creates enough incremental value.
+        </strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Competitive Evidence Boundary
+      </div>
+
+      <h2>
+        No false "no competitor" story.
+      </h2>
+    </div>
+
+    <div class="grid-3">
+
+      <article class="card">
+        <span class="tag">Observed</span>
+        <h3>Strong existing ecosystem</h3>
+        <p>
+          Public tools, datasets, specialists and consultants already support
+          territorial energy transition.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="tag">Strategic Hypothesis</span>
+        <h3>Connective white space</h3>
+        <p>
+          Wenergy may create value by connecting capabilities that remain fragmented
+          across today's workflow.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="tag">To Validate</span>
+        <h3>Defensibility</h3>
+        <p>
+          Workflow embedding, returned evidence and institutional trust must emerge
+          through real deployments.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="actions">
+
+      <a class="btn btn-secondary"
+         href="../evidence/SOURCES.md">
+        Competitive Sources
+      </a>
+
+      <a class="btn btn-secondary"
+         href="../evidence/CLAIMS_AND_GUARDRAILS.md">
+        Claims Boundaries
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="03_market.html">
+        ← 03 — Market & Customers
+      </a>
+
+      <a href="05_business_model.html">
+        05 — Business Model →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+      <strong>CONNECT • MATCH • ACT</strong><br>
+      Wenergy does not claim that existing public and professional tools are
+      inadequate. Its competitive hypothesis is that a shared project-intelligence
+      and orchestration layer can create additional value between them.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

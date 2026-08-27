@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Wenergy roadmap and vision — from Foix pilot to repeatable territorial energy intelligence, partner scale and selective international expansion.">
+
+  <title>12 — Roadmap & Vision | Wenergy</title>
+
+  <link rel="stylesheet" href="../assets/css/wenergy.css">
+
+  <style>
+
+    .roadmap-hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .roadmap-hero::after {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      right: -350px;
+      top: -390px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle,
+          rgba(46,204,113,.17),
+          rgba(46,204,113,.035) 46%,
+          transparent 72%);
+      pointer-events: none;
+    }
+
+    .north-star {
+      padding: 36px;
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, var(--teal), #145252);
+      color: white;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .north-star::after {
+      content: "W";
+      position: absolute;
+      right: 30px;
+      bottom: -90px;
+      font-size: 260px;
+      font-weight: 900;
+      color: rgba(255,255,255,.035);
+      letter-spacing: -.1em;
+    }
+
+    .north-star h2 {
+      color: white;
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .north-star p {
+      font-size: 19px;
+      max-width: 900px;
+      opacity: .9;
+      position: relative;
+      z-index: 2;
+    }
+
+    .roadmap-track {
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .roadmap-stage {
+      min-height: 235px;
+      padding: 20px;
+      border-radius: 19px;
+      border: 1px solid var(--border);
+      background: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .roadmap-stage.active {
+      border-top: 5px solid var(--forest);
+    }
+
+    .roadmap-stage.next {
+      border-top: 5px solid var(--gold);
+    }
+
+    .roadmap-stage.future {
+      border-top: 5px solid var(--teal);
+    }
+
+    .roadmap-stage strong {
+      display: block;
+      color: var(--teal);
+      margin: 10px 0 7px;
+      font-size: 17px;
+    }
+
+    .roadmap-num {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .roadmap-stage.next .roadmap-num {
+      background: var(--gold);
+      color: var(--teal);
+    }
+
+    .roadmap-stage.future .roadmap-num {
+      background: var(--teal);
+    }
+
+    .months-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 16px;
+    }
+
+    .month-card {
+      padding: 25px;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid var(--border);
+      min-height: 300px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .month-card h3 {
+      font-size: 23px;
+    }
+
+    .month-card.now {
+      border-top: 5px solid var(--forest);
+    }
+
+    .month-card.build {
+      border-top: 5px solid var(--gold);
+    }
+
+    .month-card.scale {
+      border-top: 5px solid var(--teal);
+    }
+
+    .month-card.expand {
+      border-top: 5px solid #5f8a7b;
+    }
+
+    .month-range {
+      display: inline-block;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: var(--forest);
+      font-weight: 900;
+      font-size: 10px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .gate-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .gate-row {
+      display: grid;
+      grid-template-columns: 130px 1fr 180px;
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .gate-code {
+      font-weight: 900;
+      color: var(--forest);
+      font-size: 13px;
+    }
+
+    .gate-question {
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .gate-action {
+      text-align: right;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--grey);
+    }
+
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 12px;
+    }
+
+    .partner-card {
+      min-height: 190px;
+      padding: 21px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+    }
+
+    .partner-card strong {
+      display: block;
+      color: var(--forest);
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .partner-card .partner-role {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 9px;
+    }
+
+    .scale-path {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .scale-step {
+      min-height: 175px;
+      padding: 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .scale-step strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 7px;
+    }
+
+    .scale-step.current {
+      background: var(--forest);
+      color: white;
+      border-color: var(--forest);
+    }
+
+    .scale-step.current strong {
+      color: white;
+    }
+
+    .validation-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .validation-card {
+      min-height: 200px;
+      padding: 21px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .validation-card strong {
+      display: block;
+      color: var(--forest);
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .validation-card small {
+      color: var(--grey);
+    }
+
+    .future-product-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .future-card {
+      min-height: 210px;
+      padding: 22px;
+      border-radius: 19px;
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--border);
+    }
+
+    .future-card strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .future-card .future-tag {
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--grey);
+      letter-spacing: .06em;
+      margin-bottom: 9px;
+      display: block;
+    }
+
+    .five-year {
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .year-card {
+      min-height: 230px;
+      padding: 20px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .year-card strong {
+      display: block;
+      color: var(--teal);
+      margin: 8px 0 7px;
+    }
+
+    .year-number {
+      font-size: 28px;
+      color: var(--forest);
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .year-card.five {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+
+    .year-card.five strong,
+    .year-card.five .year-number {
+      color: white;
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .outcome-card {
+      min-height: 180px;
+      padding: 21px;
+      border-radius: 18px;
+      background: white;
+      border: 1px solid var(--border);
+    }
+
+    .outcome-card strong {
+      display: block;
+      color: var(--forest);
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .what-must-be-true {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 14px;
+    }
+
+    .truth-card {
+      min-height: 190px;
+      padding: 22px;
+      border-radius: 19px;
+      border: 1px solid var(--border);
+      background: white;
+      border-left: 5px solid var(--forest);
+    }
+
+    .truth-card strong {
+      display: block;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .closing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .closing-card {
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .closing-card.left {
+      border-top: 5px solid var(--forest);
+    }
+
+    .closing-card.right {
+      border-top: 5px solid var(--gold);
+    }
+
+    .final-thesis {
+      padding: 42px;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, #0D3B3B, #154e43 55%, #1E6E3A);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .final-thesis::after {
+      content: "CONNECT • MATCH • ACT";
+      position: absolute;
+      right: -30px;
+      bottom: 8px;
+      font-size: 50px;
+      font-weight: 900;
+      color: rgba(255,255,255,.035);
+      white-space: nowrap;
+    }
+
+    .final-thesis h2 {
+      color: white;
+      max-width: 980px;
+    }
+
+    .final-thesis p {
+      font-size: 18px;
+      max-width: 920px;
+      opacity: .9;
+    }
+
+    .final-thesis strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 1050px) {
+
+      .roadmap-track,
+      .five-year {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .months-grid,
+      .validation-grid,
+      .future-product-grid,
+      .outcome-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .partner-grid,
+      .scale-path {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .what-must-be-true {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media (max-width: 700px) {
+
+      .roadmap-track,
+      .months-grid,
+      .partner-grid,
+      .scale-path,
+      .validation-grid,
+      .future-product-grid,
+      .five-year,
+      .outcome-grid,
+      .what-must-be-true,
+      .closing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gate-row {
+        grid-template-columns: 1fr;
+      }
+
+      .gate-action {
+        text-align: left;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <div class="container nav">
+
+    <a class="brand" href="../index.html">
+      <img src="../assets/wenergy_logo.png" alt="Wenergy">
+    </a>
+
+    <nav class="navlinks">
+      <a href="01_problem.html">01 Problem</a>
+      <a href="02_solution.html">02 Solution</a>
+      <a href="03_market.html">03 Market</a>
+      <a href="04_competition.html">04 Competition</a>
+      <a href="05_business_model.html">05 Business</a>
+      <a href="06_financial_case.html">06 Financials</a>
+      <a href="07_foix_pilot.html">07 Pilot</a>
+      <a href="08_environmental_impact.html">08 Environment</a>
+      <a href="09_social_impact.html">09 Social</a>
+      <a href="10_low_data_scalability.html">10 Scale</a>
+      <a href="11_governance_risk.html">11 Governance</a>
+      <a class="active" href="12_roadmap.html">12 Roadmap</a>
+    </nav>
+
+  </div>
+
+</header>
+
+<main>
+
+<section class="page-hero roadmap-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="../index.html">Wenergy</a>
+      &nbsp;/&nbsp;
+      Business Case
+      &nbsp;/&nbsp;
+      Roadmap & Vision
+    </div>
+
+    <div class="section-kicker">
+      Chapter 12 / 12
+    </div>
+
+    <h1>
+      Prove locally.
+      <span style="color:var(--forest)">
+        Repeat responsibly.
+        Scale only when the evidence earns it.
+      </span>
+    </h1>
+
+    <p class="lead">
+      Wenergy's roadmap is deliberately evidence-gated.
+      The priority is not to claim global scale early, but to prove that the
+      territorial intelligence and orchestration workflow creates real value,
+      can be repeated and can support a sustainable business.
+    </p>
+
+    <div class="actions">
+      <span class="tag">Foix First</span>
+      <span class="tag">Second Territory</span>
+      <span class="tag">Productisation</span>
+      <span class="tag">Partner Scale</span>
+      <span class="tag">Selective International</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="north-star">
+
+      <div class="section-kicker"
+           style="color:#a6efbf">
+        North Star
+      </div>
+
+      <h2>
+        Become the shared territorial intelligence layer that helps communities
+        identify, understand, prioritise and advance stronger local energy projects.
+      </h2>
+
+      <p>
+        Not by replacing engineering, consultants, public tools or local institutions —
+        but by helping those systems work together around a common, evidence-backed
+        project pipeline.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Strategic Sequence
+      </div>
+
+      <h2>
+        Six stages — each earned by the one before it.
+      </h2>
+    </div>
+
+    <div class="roadmap-track">
+
+      <article class="roadmap-stage active">
+        <span class="roadmap-num">1</span>
+        <strong>Functional POC</strong>
+        Build and test the territorial screening architecture.
+      </article>
+
+      <article class="roadmap-stage active">
+        <span class="roadmap-num">2</span>
+        <strong>Foix Pilot</strong>
+        Prove usefulness, decision impact and willingness to pay.
+      </article>
+
+      <article class="roadmap-stage next">
+        <span class="roadmap-num">3</span>
+        <strong>Second Territory</strong>
+        Test reuse and reduce bespoke delivery.
+      </article>
+
+      <article class="roadmap-stage next">
+        <span class="roadmap-num">4</span>
+        <strong>Productise</strong>
+        Standardise adapters, workflows and recurring value.
+      </article>
+
+      <article class="roadmap-stage future">
+        <span class="roadmap-num">5</span>
+        <strong>Partner Scale</strong>
+        Use SDE/ALEC/institutional channels to extend reach.
+      </article>
+
+      <article class="roadmap-stage future">
+        <span class="roadmap-num">6</span>
+        <strong>Selective Expansion</strong>
+        Scale nationally, then adapt internationally where evidence supports it.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        24-Month Roadmap
+      </div>
+
+      <h2>
+        Validation first. Infrastructure second. Scale third.
+      </h2>
+    </div>
+
+    <div class="months-grid">
+
+      <article class="month-card now">
+
+        <span class="month-range">
+          0–6 Months
+        </span>
+
+        <h3>Prove Foix</h3>
+
+        <ul>
+          <li>stabilise functional POC;</li>
+          <li>run stakeholder discovery;</li>
+          <li>secure first paid pilot;</li>
+          <li>validate Project Lens usefulness;</li>
+          <li>measure decision-to-action efficiency;</li>
+          <li>validate pricing corridor;</li>
+          <li>document pilot evidence.</li>
+        </ul>
+
+      </article>
+
+      <article class="month-card build">
+
+        <span class="month-range">
+          6–12 Months
+        </span>
+
+        <h3>Prove Replication</h3>
+
+        <ul>
+          <li>deploy second territory;</li>
+          <li>measure workflow reuse;</li>
+          <li>reduce onboarding hours;</li>
+          <li>formalise adapter architecture;</li>
+          <li>improve ACT workflow;</li>
+          <li>convert pilot into recurring licence;</li>
+          <li>secure first reference customer.</li>
+        </ul>
+
+      </article>
+
+      <article class="month-card scale">
+
+        <span class="month-range">
+          12–18 Months
+        </span>
+
+        <h3>Productise</h3>
+
+        <ul>
+          <li>standardise data connectors;</li>
+          <li>improve multi-territory management;</li>
+          <li>add portfolio monitoring;</li>
+          <li>improve security/governance;</li>
+          <li>build partner onboarding;</li>
+          <li>validate recurring usage;</li>
+          <li>expand pathway maturity.</li>
+        </ul>
+
+      </article>
+
+      <article class="month-card expand">
+
+        <span class="month-range">
+          18–24 Months
+        </span>
+
+        <h3>Scale Selectively</h3>
+
+        <ul>
+          <li>regional partner distribution;</li>
+          <li>multiple paying territories;</li>
+          <li>repeatable sales process;</li>
+          <li>low-data mode pilot;</li>
+          <li>community-access refinement;</li>
+          <li>production-grade operations;</li>
+          <li>prepare wider French scale.</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Evidence Gates
+      </div>
+
+      <h2>
+        Every major investment follows a question.
+      </h2>
+    </div>
+
+    <div class="gate-stack">
+
+      <div class="gate-row">
+        <div class="gate-code">GATE 01</div>
+        <div class="gate-question">
+          Do real territorial users find the Project Lens useful?
+        </div>
+        <div class="gate-action">
+          Before product expansion
+        </div>
+      </div>
+
+      <div class="gate-row">
+        <div class="gate-code">GATE 02</div>
+        <div class="gate-question">
+          Does the workflow change or accelerate a real decision?
+        </div>
+        <div class="gate-action">
+          Before scaling claims
+        </div>
+      </div>
+
+      <div class="gate-row">
+        <div class="gate-code">GATE 03</div>
+        <div class="gate-question">
+          Will a territorial buyer actually pay?
+        </div>
+        <div class="gate-action">
+          Before commercial hiring
+        </div>
+      </div>
+
+      <div class="gate-row">
+        <div class="gate-code">GATE 04</div>
+        <div class="gate-question">
+          Can a second territory reuse ≥70% of the workflow?
+        </div>
+        <div class="gate-action">
+          Before national scaling
+        </div>
+      </div>
+
+      <div class="gate-row">
+        <div class="gate-code">GATE 05</div>
+        <div class="gate-question">
+          Is recurring use stronger than one-time screening value?
+        </div>
+        <div class="gate-action">
+          Before SaaS expansion
+        </div>
+      </div>
+
+      <div class="gate-row">
+        <div class="gate-code">GATE 06</div>
+        <div class="gate-question">
+          Can partner channels reduce CAC and increase institutional trust?
+        </div>
+        <div class="gate-action">
+          Before channel scale
+        </div>
+      </div>
+
+      <div class="gate-row">
+        <div class="gate-code">GATE 07</div>
+        <div class="gate-question">
+          Can low-data mode remain useful without false precision?
+        </div>
+        <div class="gate-action">
+          Before internationalisation
+        </div>
+      </div>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:20px">
+      SCALE SHOULD FOLLOW EVIDENCE — NOT PRECEDE IT.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Partner Ecosystem
+      </div>
+
+      <h2>
+        Wenergy scales best as connective infrastructure.
+      </h2>
+
+      <p>
+        Partnerships can strengthen data quality, professional handoff,
+        territorial trust and distribution without turning Wenergy into the
+        organisation that performs every function itself.
+      </p>
+    </div>
+
+    <div class="partner-grid">
+
+      <article class="partner-card">
+        <span class="partner-role">Public Buyer / Channel</span>
+        <strong>EPCIs</strong>
+        Territorial licences, pilot ownership and local coordination.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Energy Channel</span>
+        <strong>SDE / Energy Syndicates</strong>
+        Technical credibility and multi-territory reach.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Local Expertise</span>
+        <strong>ALECs</strong>
+        Local energy advice, actor connection and validation.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Technical Institution</span>
+        <strong>Cerema / ADEME Ecosystem</strong>
+        Public methodologies, technical resources and programme context.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Professional Delivery</span>
+        <strong>BETs / Engineers</strong>
+        Feasibility, engineering and implementation validation.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Infrastructure Data</span>
+        <strong>Network Operators</strong>
+        Grid or network evidence where appropriate and accessible.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Local Resource</span>
+        <strong>Agriculture / Waste Actors</strong>
+        Feedstock, resource and participation evidence.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Project Delivery</span>
+        <strong>Developers / ESCOs</strong>
+        Downstream implementation where projects become viable.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Research</span>
+        <strong>Universities / Labs</strong>
+        Methodology and impact validation.
+      </article>
+
+      <article class="partner-card">
+        <span class="partner-role">Community</span>
+        <strong>Local Organisations</strong>
+        Inclusion, communication and community-benefit context.
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:20px">
+      PARTNERS SHOULD STRENGTHEN WENERGY'S NEUTRALITY — NOT TURN IT INTO A SALES CHANNEL FOR ONE TECHNOLOGY.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Geographic Scale Path
+      </div>
+
+      <h2>
+        Foix first — then increase the radius only when replication works.
+      </h2>
+    </div>
+
+    <div class="scale-path">
+
+      <article class="scale-step current">
+        <strong>Foix / Ariège</strong>
+        Reference POC and proposed first pilot.
+      </article>
+
+      <article class="scale-step">
+        <strong>Second Comparable Territory</strong>
+        Test repeatability in a similar French context.
+      </article>
+
+      <article class="scale-step">
+        <strong>Occitanie</strong>
+        Regional replication and partner relationships.
+      </article>
+
+      <article class="scale-step">
+        <strong>France</strong>
+        Broader institutional market once productisation is proven.
+      </article>
+
+      <article class="scale-step">
+        <strong>Selected International Markets</strong>
+        Evidence-adaptive expansion after low-data architecture is validated.
+      </article>
+
+    </div>
+
+    <div class="callout callout-light" style="margin-top:22px">
+      PROVE LOCALLY → REPEAT REGIONALLY → STANDARDISE NATIONALLY → ADAPT SELECTIVELY
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        What Must Be Proven
+      </div>
+
+      <h2>
+        The next stage depends on six truths.
+      </h2>
+    </div>
+
+    <div class="what-must-be-true">
+
+      <article class="truth-card">
+        <strong>1 — Decision Value</strong>
+        Wenergy materially improves which opportunities receive attention.
+      </article>
+
+      <article class="truth-card">
+        <strong>2 — Willingness to Pay</strong>
+        Public buyers value the workflow enough to fund it sustainably.
+      </article>
+
+      <article class="truth-card">
+        <strong>3 — Repeatability</strong>
+        New territories reuse the core product instead of requiring a rebuild.
+      </article>
+
+      <article class="truth-card">
+        <strong>4 — Recurring Need</strong>
+        Project intelligence remains useful after the first screening cycle.
+      </article>
+
+      <article class="truth-card">
+        <strong>5 — Trust</strong>
+        Users understand and accept evidence, uncertainty and governance boundaries.
+      </article>
+
+      <article class="truth-card">
+        <strong>6 — Ecosystem Fit</strong>
+        Wenergy strengthens existing public/professional workflows rather than creating duplication.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Product Roadmap
+      </div>
+
+      <h2>
+        Build around the decision workflow — not feature accumulation.
+      </h2>
+    </div>
+
+    <div class="future-product-grid">
+
+      <article class="future-card">
+        <span class="future-tag">Near Term</span>
+        <strong>Project Lens Refinement</strong>
+        Better evidence, uncertainty and next-action explanation.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Near Term</span>
+        <strong>Foix Map / Project UI</strong>
+        Stronger territory exploration and project drill-down.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Near Term</span>
+        <strong>ACT Workflow</strong>
+        Actor outreach, validation and professional handoff.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Near Term</span>
+        <strong>Evidence Dashboard</strong>
+        Data gaps, confidence and provenance visibility.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Mid Term</span>
+        <strong>Portfolio Management</strong>
+        Track project maturity and decisions over time.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Mid Term</span>
+        <strong>Territory Adapters</strong>
+        Faster deployment across French territories.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Mid Term</span>
+        <strong>Community Benefit Lens</strong>
+        Distributional and local-access context.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Mid Term</span>
+        <strong>Impact Monitoring</strong>
+        Transition from potential to measured outcomes.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Later</span>
+        <strong>Low-Data Mode</strong>
+        Evidence-adaptive deployment where datasets are sparse.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Later</span>
+        <strong>Partner Workspace</strong>
+        Professional collaboration around Project Lenses.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Later</span>
+        <strong>Community Access Layer</strong>
+        Role-appropriate public and resident interfaces.
+      </article>
+
+      <article class="future-card">
+        <span class="future-tag">Later</span>
+        <strong>International Adapters</strong>
+        Language, governance, data and standards localisation.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Five-Year Vision
+      </div>
+
+      <h2>
+        Build a durable category before chasing scale.
+      </h2>
+    </div>
+
+    <div class="five-year">
+
+      <article class="year-card">
+        <div class="year-number">Y1</div>
+        <strong>Validate</strong>
+        First customers, first pilots, first evidence of payment.
+      </article>
+
+      <article class="year-card">
+        <div class="year-number">Y2</div>
+        <strong>Repeat</strong>
+        Multiple territories, improving reuse, first recurring references.
+      </article>
+
+      <article class="year-card">
+        <div class="year-number">Y3</div>
+        <strong>Productise</strong>
+        More reusable data adapters, workflow automation and channel foundations.
+      </article>
+
+      <article class="year-card">
+        <div class="year-number">Y4</div>
+        <strong>Scale</strong>
+        Base-case break-even, broader France footprint, partner-led acquisition.
+      </article>
+
+      <article class="year-card five">
+        <div class="year-number">Y5</div>
+        <strong>Territorial Intelligence Infrastructure</strong>
+        35 active Base-case customers, ~€926k ending ARR and a validated platform ready for selective further scale.
+      </article>
+
+    </div>
+
+    <div class="source" style="margin-top:18px">
+      Customer and ARR values are Base financial planning scenarios, not guaranteed outcomes.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">
+        Outcome Architecture
+      </div>
+
+      <h2>
+        The final measure of success is not software usage alone.
+      </h2>
+    </div>
+
+    <div class="outcome-grid">
+
+      <article class="outcome-card">
+        <strong>Better Decisions</strong>
+        Stronger candidate projects identified and weaker ones rejected earlier.
+      </article>
+
+      <article class="outcome-card">
+        <strong>Faster Action</strong>
+        Less time between fragmented evidence and professional investigation.
+      </article>
+
+      <article class="outcome-card">
+        <strong>Broader Access</strong>
+        Smaller communes and communities gain clearer territorial energy intelligence.
+      </article>
+
+      <article class="outcome-card">
+        <strong>Real Impact</strong>
+        Implemented projects ultimately generate measurable renewable/recovered energy and community value.
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="closing-grid">
+
+      <article class="closing-card left">
+
+        <span class="tag">What Wenergy Is</span>
+
+        <h3>
+          Territorial Energy Intelligence & Orchestration
+        </h3>
+
+        <p>
+          A shared layer connecting:
+        </p>
+
+        <ul>
+          <li>energy needs;</li>
+          <li>renewable and recoverable resources;</li>
+          <li>actors;</li>
+          <li>buildings and infrastructure;</li>
+          <li>constraints;</li>
+          <li>evidence;</li>
+          <li>professional action.</li>
+        </ul>
+
+      </article>
+
+      <article class="closing-card right">
+
+        <span class="tag"
+              style="background:rgba(196,157,70,.14);color:#765d1d">
+          What Wenergy Is Not
+        </span>
+
+        <h3>
+          A replacement for the ecosystem
+        </h3>
+
+        <p>
+          Wenergy does not replace:
+        </p>
+
+        <ul>
+          <li>qualified engineers;</li>
+          <li>consultants;</li>
+          <li>public decision makers;</li>
+          <li>permitting authorities;</li>
+          <li>developers;</li>
+          <li>professional feasibility.</li>
+        </ul>
+
+      </article>
+
+    </div>
+
+    <div class="guardrail" style="margin-top:22px">
+      WENERGY ORIENTS, CONNECTS AND ENABLES ACTION.
+      QUALIFIED PROFESSIONALS VALIDATE, ENGINEER AND IMPLEMENT.
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section-alt">
+
+  <div class="container">
+
+    <div class="final-thesis">
+
+      <div class="section-kicker"
+           style="color:#a6efbf">
+        Final Thesis
+      </div>
+
+      <h2>
+        The energy transition does not only need more technologies.
+        It needs better ways to see how local resources, needs, people and
+        professional capabilities fit together.
+      </h2>
+
+      <p>
+        Wenergy is being built to answer that coordination problem:
+        connect fragmented territorial evidence, identify stronger project
+        relationships, explain uncertainty, help communities and public teams
+        decide what deserves attention and move the strongest opportunities
+        toward qualified action.
+      </p>
+
+      <p>
+        <strong>
+          The ambition is not to make every project possible.
+          It is to make better projects easier to find, understand and advance.
+        </strong>
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="callout callout-light">
+      THE TERRITORY SHOULD HELP DETERMINE THE TECHNOLOGY —
+      NOT THE TECHNOLOGY DETERMINE THE TERRITORY.
+    </div>
+
+    <div class="callout" style="margin-top:16px">
+      CONNECT • MATCH • ACT
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+    <div class="page-nav">
+
+      <a href="11_governance_risk.html">
+        ← 11 — Governance & Risk
+      </a>
+
+      <a href="../index.html">
+        Return to Wenergy Home →
+      </a>
+
+    </div>
+
+    <div class="actions"
+         style="justify-content:center;margin-top:22px">
+
+      <a class="btn btn-primary"
+         href="WENERGY_BUSINESS_CASE.md">
+        Read Full Master Business Case
+      </a>
+
+      <a class="btn btn-secondary"
+         href="../evidence/SOURCES.md">
+        Explore Sources
+      </a>
+
+      <a class="btn btn-secondary"
+         href="../evidence/POC_METRICS.md">
+        Explore POC Evidence
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <img src="../assets/wenergy_logo.png" alt="Wenergy">
+
+    <div class="disclaimer">
+      <strong>CONNECT • MATCH • ACT</strong><br>
+      Wenergy is currently a functional POC / pre-pilot product.
+      Roadmap, growth, revenue and scalability statements represent planned
+      milestones or validation targets unless explicitly identified as observed evidence.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
