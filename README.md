@@ -617,3 +617,29 @@ Sanitised demonstration material only.
 ### CONNECT • MATCH • ACT
 
 **Wenergy orients and connects. Qualified professionals validate, engineer and implement.**
+---
+
+## Explore the functional product
+
+The business case is supported by a working territorial intelligence proof of concept.
+
+<p align="center">
+  <img src="assets/visuals/product-evidence/wenergy_functional_poc_overview.png" alt="Wenergy functional POC overview" width="90%">
+</p>
+
+<p align="center">
+  <img src="assets/visuals/product-evidence/wenergy_territorial_map.png" alt="Wenergy territorial intelligence map" width="90%">
+</p>
+
+<p align="center">
+  <img src="assets/visuals/product-evidence/wenergy_project_lens.png" alt="Wenergy Project Lens" width="90%">
+</p>
+
+### Product links
+
+- **Explore the Wenergy product:** https://rubmarg09.github.io/wenergy-poc-demo/
+- **Try the interactive Public Twin:** https://rubmarg09.github.io/wenergy-poc-demo/interactive-demo/
+- **See real functional POC evidence:** https://rubmarg09.github.io/wenergy-poc-demo/site/real-poc.html
+- **Explore the public POC repository:** https://github.com/rubmarg09/wenergy-poc-demo
+
+The screenshots above come from the real functional Wenergy POC. Screening outputs support orientation and prioritisation before professional feasibility; they are not presented as final engineering validation.
